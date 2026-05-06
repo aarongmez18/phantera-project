@@ -1,0 +1,151 @@
+.pro-strip-gallery {
+  --angle: -12deg;
+  --anti-angle: 12deg;
+  --overlap: 5vw;
+
+  position: relative;
+  left: 50%;
+  width: 100vw;
+  height: clamp(360px, 42vw, 560px);
+  transform: translateX(-50%);
+  display: flex;
+  overflow: hidden;
+  isolation: isolate;
+  background: #050505;
+}
+
+/* Sombra superior/inferior sutil para integrarla con la sección */
+.pro-strip-gallery::before,
+.pro-strip-gallery::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 90px;
+  z-index: 30;
+  pointer-events: none;
+}
+
+.pro-strip-gallery::before {
+  top: 0;
+  background: linear-gradient(to bottom, rgba(5, 5, 5, 0.35), transparent);
+}
+
+.pro-strip-gallery::after {
+  bottom: 0;
+  background: linear-gradient(to top, rgba(5, 5, 5, 0.45), transparent);
+}
+
+.pro-strip-panel {
+  position: relative;
+  height: 100%;
+  flex: 1 1 0;
+  min-width: 0;
+  overflow: hidden;
+  background: #050505;
+  transform: skewX(var(--angle));
+  margin-left: calc(var(--overlap) * -1);
+  transition:
+    flex-grow 0.65s cubic-bezier(0.16, 1, 0.3, 1),
+    filter 0.65s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: flex-grow, filter;
+}
+
+/* Para que los extremos cubran todo el viewport */
+.pro-strip-panel-1 {
+  margin-left: calc(var(--overlap) * -1.8);
+  z-index: 1;
+}
+
+.pro-strip-panel-2 {
+  z-index: 2;
+}
+
+.pro-strip-panel-3 {
+  margin-right: calc(var(--overlap) * -1.8);
+  z-index: 3;
+}
+
+.pro-strip-panel img {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: calc(100% + 18vw);
+  max-width: none;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  user-select: none;
+  transform: translateX(-50%) skewX(var(--anti-angle)) scale(1.04);
+  transition:
+    transform 0.75s cubic-bezier(0.16, 1, 0.3, 1),
+    filter 0.75s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform;
+}
+
+/* Capa oscura elegante encima de cada foto */
+.pro-strip-panel::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(to top, rgba(5, 5, 5, 0.42), transparent 48%),
+    linear-gradient(to right, rgba(5, 5, 5, 0.18), transparent 35%, transparent 65%, rgba(5, 5, 5, 0.18));
+  pointer-events: none;
+  z-index: 5;
+}
+
+/* Cuando entras en la galería, todas bajan protagonismo */
+.pro-strip-gallery:hover .pro-strip-panel {
+  flex-grow: 0.82;
+  filter: brightness(0.62) saturate(0.85);
+}
+
+/* La imagen activa crece y ocupa más ancho */
+.pro-strip-gallery .pro-strip-panel:hover {
+  flex-grow: 1.45;
+  filter: brightness(1) saturate(1.08);
+  z-index: 20;
+}
+
+.pro-strip-gallery .pro-strip-panel:hover img {
+  transform: translateX(-50%) skewX(var(--anti-angle)) scale(1.13);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .pro-strip-gallery {
+    left: auto;
+    width: 100%;
+    height: auto;
+    transform: none;
+    flex-direction: column;
+  }
+
+  .pro-strip-panel,
+  .pro-strip-panel-1,
+  .pro-strip-panel-2,
+  .pro-strip-panel-3 {
+    width: 100%;
+    height: 280px;
+    margin-left: 0;
+    margin-right: 0;
+    transform: none;
+  }
+
+  .pro-strip-panel img {
+    width: 100%;
+    left: 0;
+    transform: scale(1.02);
+  }
+
+  .pro-strip-gallery:hover .pro-strip-panel,
+  .pro-strip-gallery .pro-strip-panel:hover {
+    flex-grow: 1;
+    filter: none;
+  }
+
+  .pro-strip-gallery .pro-strip-panel:hover img {
+    transform: scale(1.06);
+  }
+}

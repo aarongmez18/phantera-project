@@ -1,18 +1,36 @@
 import { Routes } from '@angular/router';
-import { Home } from './pages/home/home';
-import { Sponsors } from './sections/sponsors/sponsors';
 
+import { Home } from './pages/home/home';
+import { AvisoLegal } from './pages/aviso-legal/aviso-legal';
+import { Privacidad } from './pages/privacidad/privacidad';
+import { Cookies } from './pages/cookies/cookies';
+import { Panthera } from './pages/panthera/panthera';
 
 export const routes: Routes = [
   {
     path: '',
     component: Home,
-    title: 'Phantera Project',
+    title: 'Panthera Project',
   },
   {
-    path: 'sponsors',
-    component: Sponsors,
-    title: 'Sponsors | Phantera Project',
+    path: 'aviso-legal',
+    component: AvisoLegal,
+    title: 'Aviso legal | Panthera Project',
+  },
+  {
+    path: 'privacidad',
+    component: Privacidad,
+    title: 'Política de privacidad | Panthera Project',
+  },
+  {
+    path: 'cookies',
+    component: Cookies,
+    title: 'Política de cookies | Panthera Project',
+  },
+  {
+    path: 'panthera',
+    component: Panthera,
+    title: 'Panthera Project | Panthera',
   },
   {
     path: '**',
