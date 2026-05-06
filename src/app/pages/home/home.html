@@ -1,31 +1,52 @@
-<main class="min-h-screen text-[#FFFFFF]">
+<main class="min-h-screen text-[#FFFFFF] bg-[#050505] overflow-hidden">
 
   <!-- HERO -->
-  <section class="relative min-h-screen flex items-center px-6 md:px-12 pt-28 pb-20 overflow-hidden">
-    <div class="absolute inset-0 bg-[#0A0A0A]/75"></div>
+  <section class="relative min-h-screen flex items-center px-6 md:px-12 pt-28 pb-20 overflow-hidden bg-[#050505]">
+    <div class="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(200,163,0,0.20),transparent_32%),linear-gradient(135deg,rgba(10,10,10,0.94),rgba(10,10,10,0.82),rgba(0,0,0,0.98))]"></div>
+    <div class="absolute inset-x-0 bottom-0 h-44 bg-gradient-to-b from-transparent to-[#0A0A0A]"></div>
 
     <div class="relative z-10 max-w-7xl mx-auto w-full">
       <div class="max-w-5xl flex flex-col gap-8">
 
-        <p class="text-[#C8A300] font-black tracking-[0.35em] uppercase text-sm md:text-base">
+        <p
+          reveal="fade-up"
+          [revealDelay]="0"
+          class="text-[#C8A300] font-black tracking-[0.35em] uppercase text-sm md:text-base"
+        >
           Train. Evolve. Repeat.
         </p>
 
-        <h1 class="font-display text-[clamp(3.5rem,10vw,10rem)] leading-none uppercase tracking-tight">
+        <h1
+          reveal="fade-up"
+          [revealDelay]="120"
+          class="font-display text-[clamp(3.5rem,10vw,10rem)] leading-none uppercase tracking-tight"
+        >
           <span class="text-[#C8A300]">Panthera</span> Project
         </h1>
 
-        <div class="flex flex-col gap-2 text-3xl md:text-5xl font-black leading-tight uppercase">
+        <div
+          reveal="fade-up"
+          [revealDelay]="240"
+          class="flex flex-col gap-2 text-3xl md:text-5xl font-black leading-tight uppercase"
+        >
           <p>Entrena con intención.</p>
           <p>Vive con disciplina.</p>
         </div>
 
-        <p class="text-xl md:text-2xl text-[#FFFFFF]/80 leading-relaxed max-w-3xl">
+        <p
+          reveal="fade-up"
+          [revealDelay]="360"
+          class="text-xl md:text-2xl text-[#FFFFFF]/80 leading-relaxed max-w-3xl italic"
+        >
           Transforma tu cuerpo, tu mentalidad y tu forma de entrenar a través del Muay Thai
           y la preparación física.
         </p>
 
-        <div class="flex flex-col sm:flex-row gap-4 pt-4">
+        <div
+          reveal="fade-up"
+          [revealDelay]="480"
+          class="flex flex-col sm:flex-row gap-4 pt-4"
+        >
           <a
             routerLink="/contacto"
             class="btn-wave inline-flex items-center justify-center border-2 border-[#C8A300] text-[#C8A300] px-8 py-4 rounded-lg font-black relative overflow-hidden transition"
@@ -45,35 +66,83 @@
     </div>
   </section>
 
+<!-- NO ES SOLO ENTRENAMIENTO -->
+<section
+  id="panthera"
+  class="relative w-full bg-[#0A0A0A] pt-24 md:pt-32 pb-24 md:pb-32 px-6 md:px-12 border-y border-[#C8A300]/30 overflow-hidden"
+>
+  <!-- Fondo oscuro premium -->
+  <div class="absolute inset-0 bg-[radial-gradient(circle_at_80%_20%,rgba(200,163,0,0.16),transparent_32%),linear-gradient(180deg,#0A0A0A_0%,#050505_100%)]"></div>
+  <div class="absolute left-0 bottom-0 w-full h-40 bg-gradient-to-t from-[#050505] to-transparent"></div>
 
-  <!-- NO ES SOLO ENTRENAMIENTO -->
-  <section id="panthera" class="w-full bg-gradient-to-r from-[#C8A300] via-[#d8b313] to-[#9f8100] py-20 md:py-28 px-6 md:px-12 border-y-8 border-[#0A0A0A]">
-    <div class="max-w-7xl mx-auto flex flex-col gap-8">
-      <h2 class="font-display text-5xl md:text-7xl lg:text-8xl text-[#0A0A0A] leading-none uppercase">
+  <div
+    reveal="fade-left"
+    class="relative z-10 max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-[0.9fr_1.1fr] gap-12 lg:gap-20 items-center"
+  >
+
+    <!-- Título -->
+    <div class="flex flex-col gap-6">
+      <p class="text-[#C8A300] font-black tracking-[0.35em] uppercase text-sm">
+        Panthera Mindset
+      </p>
+
+      <h2 class="font-display text-5xl md:text-7xl lg:text-8xl text-[#FFFFFF] leading-none uppercase">
         No es solo
         <br />
-        <span class="italic text-[#FFFFFF] [-webkit-text-stroke:2px_#0A0A0A]">
+        <span class="italic text-[#C8A300]">
           entrenamiento.
         </span>
       </h2>
+    </div>
 
-      <div class="max-w-4xl text-[#0A0A0A] text-xl md:text-2xl leading-relaxed font-semibold">
-        <p>El entrenamiento no es solo físico.</p>
-        <p>Es una forma de construirte.</p>
-        <p class="mt-6 font-black uppercase">Disciplina. Mentalidad. Constancia.</p>
-        <p class="mt-6">
-          Aquí no vienes solo a entrenar. Vienes a evolucionar.
-        </p>
+    <!-- Texto + pilares sin card -->
+    <div class="flex flex-col gap-10">
+      <div class="max-w-3xl text-[#FFFFFF]/75 text-xl md:text-2xl leading-relaxed font-semibold">
+        <p class="italic">El entrenamiento no es solo físico.</p>
+        <p class="italic mt-3">Es una forma de construirte.</p>
+        <p class="italic mt-3">Aquí no vienes solo a entrenar.</p>
+        <p class="italic mt-3"> Vienes a evolucionar.</p>
+      </div>
+
+      <div class="flex flex-col border-y border-[#C8A300]/30">
+        <div class="py-5 flex items-center justify-between gap-6 border-b border-[#C8A300]/20">
+          <span class="text-[#C8A300]/60 text-sm font-black tracking-[0.25em]">
+          </span>
+          <p class="font-display text-4xl md:text-6xl text-[#FFFFFF] uppercase leading-none">
+            Disciplina.
+          </p>
+        </div>
+
+        <div class="py-5 flex items-center justify-between gap-6 border-b border-[#C8A300]/20">
+          <span class="text-[#C8A300]/60 text-sm font-black tracking-[0.25em]">
+          </span>
+          <p class="font-display text-4xl md:text-6xl text-[#C8A300] uppercase leading-none">
+            Mentalidad.
+          </p>
+        </div>
+
+        <div class="py-5 flex items-center justify-between gap-6">
+          <span class="text-[#C8A300]/60 text-sm font-black tracking-[0.25em]">
+          </span>
+          <p class="font-display text-4xl md:text-6xl text-[#FFFFFF] uppercase leading-none">
+            Constancia.
+          </p>
+        </div>
       </div>
     </div>
-  </section>
 
-
+  </div>
+</section>
   <!-- CONSTRUYE UNA BASE REAL -->
-  <section class="w-full bg-[#0A0A0A]/90 py-24 px-6 md:px-12">
-    <div class="max-w-7xl mx-auto flex flex-col gap-14">
+  <section class="relative w-full bg-[#050505] py-24 px-6 md:px-12 overflow-hidden">
+    <div class="absolute inset-0 bg-[radial-gradient(circle_at_10%_20%,rgba(200,163,0,0.10),transparent_30%)]"></div>
 
-      <div class="max-w-4xl">
+    <div class="relative z-10 max-w-7xl mx-auto flex flex-col gap-14">
+
+      <div
+        reveal="fade-up"
+        class="max-w-4xl"
+      >
         <p class="text-[#C8A300] font-black tracking-[0.3em] uppercase text-sm mb-4">
           Sistema Panthera
         </p>
@@ -83,26 +152,62 @@
           <span class="text-[#C8A300]">base real</span>
         </h2>
 
-        <p class="mt-8 text-xl md:text-2xl text-[#FFFFFF]/75 leading-relaxed">
+        <p class="mt-8 text-xl md:text-2xl text-[#FFFFFF]/75 leading-relaxed italic">
           Entrena con un sistema que te guía, no con improvisación.
         </p>
       </div>
 
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
-        <div class="rounded-2xl border border-[#C8A300]/40 bg-[#FFFFFF]/5 p-8">
-          <h3 class="text-3xl font-black text-[#C8A300] uppercase">Más fuerza</h3>
+        <div
+          reveal="zoom-in"
+          [revealDelay]="0"
+          class="group min-h-[190px] rounded-[28px] border border-[#C8A300]/25 bg-[linear-gradient(145deg,rgba(255,255,255,0.08),rgba(255,255,255,0.02))] p-8 flex items-end text-left shadow-[0_24px_70px_rgba(0,0,0,0.35)] hover:-translate-y-2 hover:border-[#C8A300]/70 transition duration-500"
+        >
+          <div>
+            <p class="text-[#C8A300]/70 font-black text-sm mb-4">01</p>
+            <h3 class="text-3xl md:text-4xl font-black text-[#C8A300] uppercase leading-tight">
+              Más fuerza
+            </h3>
+          </div>
         </div>
 
-        <div class="rounded-2xl border border-[#C8A300]/40 bg-[#FFFFFF]/5 p-8">
-          <h3 class="text-3xl font-black text-[#C8A300] uppercase">Más confianza</h3>
+        <div
+          reveal="zoom-in"
+          [revealDelay]="120"
+          class="group min-h-[190px] rounded-[28px] border border-[#C8A300]/25 bg-[linear-gradient(145deg,rgba(255,255,255,0.08),rgba(255,255,255,0.02))] p-8 flex items-end text-left shadow-[0_24px_70px_rgba(0,0,0,0.35)] hover:-translate-y-2 hover:border-[#C8A300]/70 transition duration-500"
+        >
+          <div>
+            <p class="text-[#C8A300]/70 font-black text-sm mb-4">02</p>
+            <h3 class="text-3xl md:text-4xl font-black text-[#C8A300] uppercase leading-tight">
+              Más confianza
+            </h3>
+          </div>
         </div>
 
-        <div class="rounded-2xl border border-[#C8A300]/40 bg-[#FFFFFF]/5 p-8">
-          <h3 class="text-3xl font-black text-[#C8A300] uppercase">Más estructura</h3>
+        <div
+          reveal="zoom-in"
+          [revealDelay]="240"
+          class="group min-h-[190px] rounded-[28px] border border-[#C8A300]/25 bg-[linear-gradient(145deg,rgba(255,255,255,0.08),rgba(255,255,255,0.02))] p-8 flex items-end text-left shadow-[0_24px_70px_rgba(0,0,0,0.35)] hover:-translate-y-2 hover:border-[#C8A300]/70 transition duration-500"
+        >
+          <div>
+            <p class="text-[#C8A300]/70 font-black text-sm mb-4">03</p>
+            <h3 class="text-3xl md:text-4xl font-black text-[#C8A300] uppercase leading-tight">
+              Más estructura
+            </h3>
+          </div>
         </div>
 
-        <div class="rounded-2xl border border-[#C8A300]/40 bg-[#FFFFFF]/5 p-8">
-          <h3 class="text-3xl font-black text-[#C8A300] uppercase">Más control</h3>
+        <div
+          reveal="zoom-in"
+          [revealDelay]="360"
+          class="group min-h-[190px] rounded-[28px] border border-[#C8A300]/25 bg-[linear-gradient(145deg,rgba(255,255,255,0.08),rgba(255,255,255,0.02))] p-8 flex items-end text-left shadow-[0_24px_70px_rgba(0,0,0,0.35)] hover:-translate-y-2 hover:border-[#C8A300]/70 transition duration-500"
+        >
+          <div>
+            <p class="text-[#C8A300]/70 font-black text-sm mb-4">04</p>
+            <h3 class="text-3xl md:text-4xl font-black text-[#C8A300] uppercase leading-tight">
+              Más control
+            </h3>
+          </div>
         </div>
       </div>
 
@@ -111,32 +216,41 @@
 
 
   <!-- SOBRE JULIA -->
-  <section id="sobre-julia" class="relative w-full min-h-[720px] bg-gradient-to-br from-[#0A0A0A] via-[#111111] to-[#1d1802] overflow-hidden px-6 md:px-12 border-y-8 border-[#C8A300]">
-    <div class="max-w-7xl mx-auto min-h-[720px] flex items-center py-20 md:py-0">
+  <section
+    id="sobre-julia"
+    class="relative w-full min-h-[760px] bg-[#0A0A0A] overflow-hidden px-6 md:px-12 border-y border-[#C8A300]/30"
+  >
+    <div class="absolute inset-0 bg-[radial-gradient(circle_at_78%_50%,rgba(200,163,0,0.16),transparent_30%),linear-gradient(180deg,#050505_0%,#0A0A0A_45%,#050505_100%)]"></div>
 
-      <div class="relative z-10 flex flex-col gap-8 w-full md:w-[calc(100%-420px)] lg:w-[calc(100%-520px)] max-w-[900px]">
+    <div class="relative z-10 max-w-7xl mx-auto min-h-[760px] flex items-center py-20 md:py-0">
+
+      <div
+        reveal="fade-left"
+        class="relative z-10 flex flex-col gap-8 w-full md:w-[58%] max-w-[760px]"
+      >
 
         <p class="text-[#C8A300] font-black tracking-[0.3em] uppercase text-sm">
           Quién está detrás de Panthera
         </p>
 
-        <h2 class="font-display text-5xl md:text-7xl lg:text-8xl text-[#FFFFFF] leading-none uppercase">
-          Julia Moreno
-          <br />
-          <span class="text-[#C8A300]">De los Santos</span>
-        </h2>
+    <h2 class="font-display text-5xl md:text-7xl lg:text-8xl text-[#FFFFFF] leading-none uppercase">
+    Julia
+    <span class="inline-block bg-[#C8A300] text-[#0A0A0A] px-4 md:px-6 py-2 md:py-3 rounded-md ml-0 md:ml-3 mt-3 md:mt-0">
+        Moreno
+    </span>
+    </h2>
 
         <div class="text-xl md:text-2xl text-[#FFFFFF]/80 leading-relaxed max-w-4xl">
-          <p>
+          <p class="italic">
             Peleadora profesional de Muay Thai y entrenadora personal.
           </p>
 
-          <p class="mt-5">
+          <p class="mt-5 italic">
             Entrenando desde los 13 años, ha construido su camino a través de la disciplina,
             la competición y el proceso.
           </p>
 
-          <p class="mt-5">
+          <p class="mt-5 italic">
             PANTHERA PROJECT nace de esa experiencia: de entender que el entrenamiento no solo
             transforma el cuerpo, sino la forma en la que te enfrentas a todo.
           </p>
@@ -152,19 +266,45 @@
       </div>
     </div>
 
-    <div class="hidden md:flex absolute top-0 right-0 h-full w-[380px] lg:w-[500px] xl:w-[560px] items-center justify-center overflow-hidden bg-[#FFFFFF] rounded-l-[32px]">
-      <p class="text-4xl md:text-5xl font-black text-[#0A0A0A] leading-tight">
-        IMAGEN JULIA
-      </p>
+    <div
+      reveal="fade-right"
+      class="hidden md:flex absolute top-0 right-0 h-full w-[42%] items-center justify-center px-10 lg:px-14"
+    >
+      <div class="relative w-full max-w-[440px] h-[560px] lg:h-[620px] rounded-[36px] overflow-hidden border-2 border-[#C8A300]/60 shadow-[0_30px_80px_rgba(0,0,0,0.55)] bg-[#0A0A0A]">
+
+        <img
+          src="/img/foto_julia.jpg"
+          alt="Julia Moreno De los Santos"
+          class="w-full h-full object-cover object-center select-none"
+          draggable="false"
+        />
+
+        <div class="absolute inset-0 bg-gradient-to-t from-[#0A0A0A]/75 via-transparent to-transparent"></div>
+
+        <div class="absolute left-0 bottom-0 w-full p-6">
+          <p class="text-[#C8A300] font-black uppercase tracking-[0.2em] text-xs">
+            Muay Thai Fighter
+          </p>
+          <p class="text-[#FFFFFF] font-black text-2xl uppercase mt-1">
+            Julia Moreno
+          </p>
+        </div>
+
+      </div>
     </div>
   </section>
 
 
   <!-- BASE DE PANTHERA -->
-  <section class="w-full bg-[#0A0A0A]/95 py-24 px-6 md:px-12">
-    <div class="max-w-7xl mx-auto flex flex-col gap-14 text-center">
+  <section class="relative w-full bg-[#050505] py-24 px-6 md:px-12 overflow-hidden border-t border-[#C8A300]/20">
+    <div class="absolute inset-0 bg-[radial-gradient(circle_at_50%_0%,rgba(200,163,0,0.12),transparent_35%)]"></div>
 
-      <div class="flex flex-col gap-5">
+    <div class="relative z-10 max-w-7xl mx-auto flex flex-col gap-14 text-center">
+
+      <div
+        reveal="fade-up"
+        class="flex flex-col gap-5"
+      >
         <p class="text-[#C8A300] font-black tracking-[0.3em] uppercase text-sm">
           La base de Panthera
         </p>
@@ -176,25 +316,55 @@
         </h2>
       </div>
 
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
-        <div class="rounded-2xl border border-[#C8A300]/40 bg-[#FFFFFF]/5 p-8">
-          <p class="text-2xl font-black uppercase">Disciplina</p>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-4">
+        <div
+          reveal="zoom-in"
+          [revealDelay]="0"
+          class="min-h-[160px] rounded-[28px] border border-[#C8A300]/25 bg-[linear-gradient(145deg,rgba(255,255,255,0.08),rgba(255,255,255,0.02))] px-4 py-6 flex items-center justify-center text-center overflow-hidden shadow-[0_24px_70px_rgba(0,0,0,0.25)] hover:-translate-y-2 hover:border-[#C8A300]/70 transition duration-500"
+        >
+          <p class="text-[clamp(1.2rem,1.6vw,1.875rem)] font-black uppercase leading-tight break-words">
+            Disciplina
+          </p>
         </div>
 
-        <div class="rounded-2xl border border-[#C8A300]/40 bg-[#FFFFFF]/5 p-8">
-          <p class="text-2xl font-black uppercase">Constancia</p>
+        <div
+          reveal="zoom-in"
+          [revealDelay]="100"
+          class="min-h-[160px] rounded-[28px] border border-[#C8A300]/25 bg-[linear-gradient(145deg,rgba(255,255,255,0.08),rgba(255,255,255,0.02))] px-4 py-6 flex items-center justify-center text-center overflow-hidden shadow-[0_24px_70px_rgba(0,0,0,0.25)] hover:-translate-y-2 hover:border-[#C8A300]/70 transition duration-500"
+        >
+          <p class="text-[clamp(1.2rem,1.6vw,1.875rem)] font-black uppercase leading-tight break-words">
+            Constancia
+          </p>
         </div>
 
-        <div class="rounded-2xl border border-[#C8A300]/40 bg-[#FFFFFF]/5 p-8">
-          <p class="text-2xl font-black uppercase">Respeto</p>
+        <div
+          reveal="zoom-in"
+          [revealDelay]="200"
+          class="min-h-[160px] rounded-[28px] border border-[#C8A300]/25 bg-[linear-gradient(145deg,rgba(255,255,255,0.08),rgba(255,255,255,0.02))] px-4 py-6 flex items-center justify-center text-center overflow-hidden shadow-[0_24px_70px_rgba(0,0,0,0.25)] hover:-translate-y-2 hover:border-[#C8A300]/70 transition duration-500"
+        >
+          <p class="text-[clamp(1.2rem,1.6vw,1.875rem)] font-black uppercase leading-tight break-words">
+            Respeto
+          </p>
         </div>
 
-        <div class="rounded-2xl border border-[#C8A300]/40 bg-[#FFFFFF]/5 p-8">
-          <p class="text-2xl font-black uppercase">Mentalidad</p>
+        <div
+          reveal="zoom-in"
+          [revealDelay]="300"
+          class="min-h-[160px] rounded-[28px] border border-[#C8A300]/25 bg-[linear-gradient(145deg,rgba(255,255,255,0.08),rgba(255,255,255,0.02))] px-4 py-6 flex items-center justify-center text-center overflow-hidden shadow-[0_24px_70px_rgba(0,0,0,0.25)] hover:-translate-y-2 hover:border-[#C8A300]/70 transition duration-500"
+        >
+          <p class="text-[clamp(1.2rem,1.6vw,1.875rem)] font-black uppercase leading-tight break-words">
+            Mentalidad
+          </p>
         </div>
 
-        <div class="rounded-2xl border border-[#C8A300]/40 bg-[#FFFFFF]/5 p-8">
-          <p class="text-2xl font-black uppercase">Autenticidad</p>
+        <div
+          reveal="zoom-in"
+          [revealDelay]="400"
+          class="min-h-[160px] rounded-[28px] border border-[#C8A300]/25 bg-[linear-gradient(145deg,rgba(255,255,255,0.08),rgba(255,255,255,0.02))] px-4 py-6 flex items-center justify-center text-center overflow-hidden shadow-[0_24px_70px_rgba(0,0,0,0.25)] hover:-translate-y-2 hover:border-[#C8A300]/70 transition duration-500"
+        >
+          <p class="text-[clamp(1.2rem,1.6vw,1.875rem)] font-black uppercase leading-tight break-words">
+            Autenticidad
+          </p>
         </div>
       </div>
 
@@ -203,134 +373,249 @@
 
 
   <!-- MARCAS ALIADAS -->
-  <section id="marcas-aliadas" class="w-full bg-[#FFFFFF] text-[#0A0A0A] py-24 px-6 md:px-12">
-    <div class="max-w-7xl mx-auto flex flex-col gap-14">
+  <section
+  id="marcas-aliadas"
+  class="relative w-full bg-[#F3F0E6] text-[#0A0A0A] py-24 px-6 md:px-12 overflow-hidden"
+>
+  <div class="absolute inset-0 bg-[radial-gradient(circle_at_80%_10%,rgba(200,163,0,0.24),transparent_32%)]"></div>
+  <div class="absolute inset-x-0 top-0 h-32 bg-gradient-to-b from-[#050505] to-transparent opacity-20"></div>
 
-      <div class="text-center flex flex-col gap-5">
-        <p class="text-[#C8A300] font-black tracking-[0.3em] uppercase text-sm">
-          Marcas aliadas
-        </p>
+  <div class="relative z-10 max-w-7xl mx-auto flex flex-col gap-16">
 
-        <h2 class="font-display text-5xl md:text-7xl text-[#0A0A0A] leading-none uppercase">
-          Marcas y proyectos
-          <br />
-          <span class="text-[#C8A300]">con los que he trabajado</span>
-        </h2>
+    <!-- Título -->
+    <div
+      reveal="fade-up"
+      class="max-w-4xl mx-auto text-center flex flex-col gap-5"
+    >
+      <p class="text-[#C8A300] font-black tracking-[0.35em] uppercase text-sm">
+        Marcas aliadas
+      </p>
 
-        <p class="text-lg md:text-xl text-[#0A0A0A]/70 max-w-3xl mx-auto leading-relaxed">
-          Colaboro con marcas, gimnasios y proyectos alineados con una visión real del entrenamiento:
-          disciplina, rendimiento y autenticidad.
-        </p>
-      </div>
+      <h2 class="font-display text-5xl md:text-7xl text-[#0A0A0A] leading-none uppercase">
+        Proyectos que
+        <br />
+        <span class="text-[#C8A300]">forman parte del camino</span>
+      </h2>
 
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-5">
+      <p class="italic text-lg md:text-xl text-[#0A0A0A]/70 max-w-3xl mx-auto leading-relaxed">
+        Colaboro con marcas, gimnasios y proyectos alineados con una visión real del entrenamiento:
+        disciplina, rendimiento y autenticidad.
+      </p>
+    </div>
 
-        <a
-          href="#"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="btn-wave group rounded-2xl border-2 border-[#C8A300] bg-[#0A0A0A] text-[#FFFFFF] p-6 flex flex-col gap-4 relative overflow-hidden transition"
-        >
-          <span class="relative z-10 flex flex-col gap-4">
-            <span class="text-2xl font-black uppercase text-[#C8A300] group-hover:text-[#0A0A0A] transition">
-              Sharkboxing
-            </span>
-            <span class="text-[#FFFFFF]/70 group-hover:text-[#0A0A0A] transition">
+    <!-- Cards sponsors -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-5">
+
+      <!-- SHARKBOXING -->
+      <a
+        reveal="zoom-in"
+        [revealDelay]="0"
+        href="#"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="group min-h-[300px] rounded-[32px] bg-[#0A0A0A] border border-[#C8A300]/35 p-6 flex flex-col justify-between overflow-hidden relative shadow-[0_28px_70px_rgba(0,0,0,0.25)] hover:-translate-y-2 hover:border-[#C8A300] hover:shadow-[0_34px_90px_rgba(0,0,0,0.38)] transition-all duration-500"
+      >
+        <div class="absolute inset-0 bg-[radial-gradient(circle_at_50%_0%,rgba(200,163,0,0.20),transparent_45%)] opacity-0 group-hover:opacity-100 transition duration-500"></div>
+
+        <div class="relative z-10 h-32 flex items-center justify-center">
+          <img
+            src="/sponsors/shark/Logo_SHARK_003.png"
+            alt="Sharkboxing"
+            class="max-h-24 max-w-[180px] object-contain select-none transition duration-500 group-hover:scale-105"
+            draggable="false"
+          />
+        </div>
+
+        <div class="relative z-10 flex flex-col gap-3">
+          <div>
+            <p class="text-[#FFFFFF]/45 text-xs font-black tracking-[0.25em] uppercase">
               Código descuento
-            </span>
-            <span class="text-2xl font-black group-hover:text-[#0A0A0A] transition">
+            </p>
+            <p class="text-[#C8A300] text-2xl font-black uppercase mt-1">
               PANTERA10
-            </span>
-          </span>
-        </a>
+            </p>
+          </div>
 
-        <a
-          href="#"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="btn-wave group rounded-2xl border-2 border-[#C8A300] bg-[#0A0A0A] text-[#FFFFFF] p-6 flex flex-col gap-4 relative overflow-hidden transition"
-        >
-          <span class="relative z-10 flex flex-col gap-4">
-            <span class="text-2xl font-black uppercase text-[#C8A300] group-hover:text-[#0A0A0A] transition">
-              MasMusculo
-            </span>
-            <span class="text-[#FFFFFF]/70 group-hover:text-[#0A0A0A] transition">
+          <div class="h-px w-full bg-[#C8A300]/25"></div>
+
+          <p class="text-[#FFFFFF]/70 text-sm font-semibold">
+            Equipamiento y material de combate.
+          </p>
+        </div>
+      </a>
+
+
+      <!-- MASMUSCULO -->
+      <a
+        reveal="zoom-in"
+        [revealDelay]="100"
+        href="#"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="group min-h-[300px] rounded-[32px] bg-[#0A0A0A] border border-[#C8A300]/35 p-6 flex flex-col justify-between overflow-hidden relative shadow-[0_28px_70px_rgba(0,0,0,0.25)] hover:-translate-y-2 hover:border-[#C8A300] hover:shadow-[0_34px_90px_rgba(0,0,0,0.38)] transition-all duration-500"
+      >
+        <div class="absolute inset-0 bg-[radial-gradient(circle_at_50%_0%,rgba(200,163,0,0.20),transparent_45%)] opacity-0 group-hover:opacity-100 transition duration-500"></div>
+
+        <div class="relative z-10 h-32 flex items-center justify-center">
+          <img
+            src="/sponsors/masmusculo_blanco.png"
+            alt="MasMusculo"
+            class="max-h-20 max-w-[190px] object-contain select-none transition duration-500 group-hover:scale-105"
+            draggable="false"
+          />
+        </div>
+
+        <div class="relative z-10 flex flex-col gap-3">
+          <div>
+            <p class="text-[#FFFFFF]/45 text-xs font-black tracking-[0.25em] uppercase">
               Código descuento
-            </span>
-            <span class="text-2xl font-black group-hover:text-[#0A0A0A] transition">
+            </p>
+            <p class="text-[#C8A300] text-2xl font-black uppercase mt-1">
               PANTERA
-            </span>
-          </span>
-        </a>
+            </p>
+          </div>
 
-        <a
-          href="#"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="btn-wave group rounded-2xl border-2 border-[#C8A300] bg-[#0A0A0A] text-[#FFFFFF] p-6 flex flex-col gap-4 relative overflow-hidden transition"
-        >
-          <span class="relative z-10 flex flex-col gap-4">
-            <span class="text-2xl font-black uppercase text-[#C8A300] group-hover:text-[#0A0A0A] transition">
-              Sportambucal
-            </span>
-            <span class="text-[#FFFFFF]/70 group-hover:text-[#0A0A0A] transition">
+          <div class="h-px w-full bg-[#C8A300]/25"></div>
+
+          <p class="text-[#FFFFFF]/70 text-sm font-semibold">
+            Nutrición deportiva y suplementación.
+          </p>
+        </div>
+      </a>
+
+
+      <!-- SPORTAMBUCAL -->
+      <a
+        reveal="zoom-in"
+        [revealDelay]="200"
+        href="#"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="group min-h-[300px] rounded-[32px] bg-[#0A0A0A] border border-[#C8A300]/35 p-6 flex flex-col justify-between overflow-hidden relative shadow-[0_28px_70px_rgba(0,0,0,0.25)] hover:-translate-y-2 hover:border-[#C8A300] hover:shadow-[0_34px_90px_rgba(0,0,0,0.38)] transition-all duration-500"
+      >
+        <div class="absolute inset-0 bg-[radial-gradient(circle_at_50%_0%,rgba(200,163,0,0.20),transparent_45%)] opacity-0 group-hover:opacity-100 transition duration-500"></div>
+
+        <div class="relative z-10 h-32 flex items-center justify-center">
+          <img
+            src="/sponsors/sportambucal_blanco.png"
+            alt="Sportambucal"
+            class="max-h-30 max-w-[590px] object-contain select-none transition duration-500 group-hover:scale-105"
+            draggable="false"
+          />
+        </div>
+
+        <div class="relative z-10 flex flex-col gap-3">
+          <div>
+            <p class="text-[#FFFFFF]/45 text-xs font-black tracking-[0.25em] uppercase">
               Código descuento
-            </span>
-            <span class="text-2xl font-black group-hover:text-[#0A0A0A] transition">
+            </p>
+            <p class="text-[#C8A300] text-2xl font-black uppercase mt-1">
               PANTERA
-            </span>
-          </span>
-        </a>
+            </p>
+          </div>
 
-        <a
-          href="#"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="btn-wave group rounded-2xl border-2 border-[#C8A300] bg-[#0A0A0A] text-[#FFFFFF] p-6 flex flex-col gap-4 relative overflow-hidden transition"
-        >
-          <span class="relative z-10 flex flex-col gap-4">
-            <span class="text-2xl font-black uppercase text-[#C8A300] group-hover:text-[#0A0A0A] transition">
-              Fitness Park
-            </span>
-            <span class="text-[#FFFFFF]/70 group-hover:text-[#0A0A0A] transition">
+          <div class="h-px w-full bg-[#C8A300]/25"></div>
+
+          <p class="text-[#FFFFFF]/70 text-sm font-semibold">
+            Protección bucal para deportes de contacto.
+          </p>
+        </div>
+      </a>
+
+
+      <!-- FITNESS PARK -->
+      <a
+        reveal="zoom-in"
+        [revealDelay]="300"
+        href="#"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="group min-h-[300px] rounded-[32px] bg-[#0A0A0A] border border-[#C8A300]/35 p-6 flex flex-col justify-between overflow-hidden relative shadow-[0_28px_70px_rgba(0,0,0,0.25)] hover:-translate-y-2 hover:border-[#C8A300] hover:shadow-[0_34px_90px_rgba(0,0,0,0.38)] transition-all duration-500"
+      >
+        <div class="absolute inset-0 bg-[radial-gradient(circle_at_50%_0%,rgba(200,163,0,0.20),transparent_45%)] opacity-0 group-hover:opacity-100 transition duration-500"></div>
+
+        <div class="relative z-10 h-32 flex items-center justify-center">
+          <img
+            src="/sponsors/FitnessPark.svg"
+            alt="Fitness Park"
+            class="max-h-20 max-w-[190px] object-contain select-none transition duration-500 group-hover:scale-105"
+            draggable="false"
+          />
+        </div>
+
+        <div class="relative z-10 flex flex-col gap-3">
+          <div>
+            <p class="text-[#FFFFFF]/45 text-xs font-black tracking-[0.25em] uppercase">
               Marca aliada
-            </span>
-            <span class="text-2xl font-black group-hover:text-[#0A0A0A] transition">
-              VER MARCA
-            </span>
-          </span>
-        </a>
+            </p>
+            <p class="text-[#C8A300] text-2xl font-black uppercase mt-1">
+              Fitness Park
+            </p>
+          </div>
 
-        <a
-          href="#"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="btn-wave group rounded-2xl border-2 border-[#C8A300] bg-[#0A0A0A] text-[#FFFFFF] p-6 flex flex-col gap-4 relative overflow-hidden transition"
-        >
-          <span class="relative z-10 flex flex-col gap-4">
-            <span class="text-2xl font-black uppercase text-[#C8A300] group-hover:text-[#0A0A0A] transition">
+          <div class="h-px w-full bg-[#C8A300]/25"></div>
+
+          <p class="text-[#FFFFFF]/70 text-sm font-semibold">
+            Espacios de entrenamiento y rendimiento.
+          </p>
+        </div>
+      </a>
+
+
+      <!-- CAMP MUAY -->
+      <a
+        reveal="zoom-in"
+        [revealDelay]="400"
+        href="#"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="group min-h-[300px] rounded-[32px] bg-[#0A0A0A] border border-[#C8A300]/35 p-6 flex flex-col justify-between overflow-hidden relative shadow-[0_28px_70px_rgba(0,0,0,0.25)] hover:-translate-y-2 hover:border-[#C8A300] hover:shadow-[0_34px_90px_rgba(0,0,0,0.38)] transition-all duration-500"
+      >
+        <div class="absolute inset-0 bg-[radial-gradient(circle_at_50%_0%,rgba(200,163,0,0.20),transparent_45%)] opacity-0 group-hover:opacity-100 transition duration-500"></div>
+
+        <div class="relative z-10 h-32 flex items-center justify-center">
+          <img
+            src="/sponsors/campmuay_blanco.png"
+            alt="Camp Muay"
+            class="max-h-32 max-w-[190px] object-contain select-none transition duration-500 group-hover:scale-105"
+            draggable="false"
+          />
+        </div>
+
+        <div class="relative z-10 flex flex-col gap-3">
+          <div>
+            <p class="text-[#FFFFFF]/45 text-xs font-black tracking-[0.25em] uppercase">
+              Proyecto aliado
+            </p>
+            <p class="text-[#C8A300] text-2xl font-black uppercase mt-1">
               Camp Muay
-            </span>
-            <span class="text-[#FFFFFF]/70 group-hover:text-[#0A0A0A] transition">
-              Código descuento
-            </span>
-            <span class="text-2xl font-black group-hover:text-[#0A0A0A] transition">
-              PENDIENTE
-            </span>
-          </span>
-        </a>
+            </p>
+          </div>
 
-      </div>
+          <div class="h-px w-full bg-[#C8A300]/25"></div>
+
+          <p class="text-[#FFFFFF]/70 text-sm font-semibold">
+            Muay Thai, comunidad y experiencia real.
+          </p>
+        </div>
+      </a>
 
     </div>
-  </section>
+
+  </div>
+</section>
 
 
   <!-- PROGRAMA -->
-  <section class="w-full bg-[#0A0A0A] py-24 px-6 md:px-12 border-y-8 border-[#C8A300]">
-    <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+  <section class="relative w-full bg-[#050505] py-24 px-6 md:px-12 border-y border-[#C8A300]/30 overflow-hidden">
+    <div class="absolute inset-0 bg-[radial-gradient(circle_at_15%_30%,rgba(200,163,0,0.12),transparent_32%),linear-gradient(180deg,#050505_0%,#0A0A0A_100%)]"></div>
 
-      <div class="flex flex-col gap-6">
+    <div class="relative z-10 max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+
+      <div
+        reveal="fade-left"
+        class="flex flex-col gap-6"
+      >
         <p class="text-[#C8A300] font-black tracking-[0.3em] uppercase text-sm">
           Empieza por aquí
         </p>
@@ -341,7 +626,7 @@
           <span class="text-[#C8A300]">Foundations</span>
         </h2>
 
-        <p class="text-xl md:text-2xl text-[#FFFFFF]/75 leading-relaxed max-w-2xl">
+        <p class="italic text-xl md:text-2xl text-[#FFFFFF]/75 leading-relaxed max-w-2xl">
           6 semanas para construir fuerza, base y disciplina.
         </p>
 
@@ -359,14 +644,21 @@
         </a>
       </div>
 
-      <div class="rounded-[32px] bg-[#FFFFFF] text-[#0A0A0A] p-10 md:p-14 min-h-[420px] flex flex-col justify-between">
-        <p class="font-display text-5xl md:text-7xl leading-none uppercase">
+      <div
+        reveal="fade-right"
+        class="relative rounded-[36px] overflow-hidden text-[#FFFFFF] p-10 md:p-14 min-h-[460px] flex flex-col justify-between bg-[url('/img/motivacion.png')] bg-cover bg-center shadow-[0_30px_90px_rgba(0,0,0,0.55)] border border-[#C8A300]/30"
+      >
+
+        <div class="absolute inset-0 bg-[#0A0A0A]/68"></div>
+        <div class="absolute inset-0 bg-gradient-to-t from-[#0A0A0A]/80 via-transparent to-transparent"></div>
+
+        <p class="relative z-10 font-display text-5xl md:text-7xl leading-none uppercase">
           No necesitas
           <br />
           motivación.
         </p>
 
-        <p class="text-3xl md:text-4xl font-black text-[#C8A300] uppercase mt-8">
+        <p class="relative z-10 text-3xl md:text-4xl font-black text-[#C8A300] uppercase mt-8">
           Necesitas estructura.
         </p>
       </div>
@@ -376,21 +668,29 @@
 
 
   <!-- CTA FINAL -->
-  <section class="w-full bg-gradient-to-r from-[#C8A300] via-[#d8b313] to-[#9f8100] text-[#0A0A0A] py-24 px-6 md:px-12">
-    <div class="max-w-7xl mx-auto text-center flex flex-col items-center gap-8">
+  <section
+    reveal="fade-up"
+    class="relative w-full bg-[#0A0A0A] text-[#FFFFFF] py-24 px-6 md:px-12 overflow-hidden"
+  >
+    <div class="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(200,163,0,0.18),transparent_34%),linear-gradient(180deg,#050505_0%,#0A0A0A_100%)]"></div>
+
+    <div class="relative z-10 max-w-7xl mx-auto text-center flex flex-col items-center gap-8">
+
+      <p class="text-[#C8A300] font-black tracking-[0.3em] uppercase text-sm">
+        Empieza hoy
+      </p>
 
       <h2 class="font-display text-5xl md:text-7xl lg:text-8xl leading-none uppercase">
-        Empieza hoy
+        Deja de improvisar
       </h2>
 
-      <div class="text-xl md:text-3xl font-bold leading-relaxed">
-        <p>Deja de improvisar.</p>
+      <div class="text-xl md:text-3xl font-bold leading-relaxed text-[#FFFFFF]/80">
         <p>Empieza a entrenar con intención.</p>
       </div>
 
       <a
         routerLink="/contacto"
-        class="btn-wave inline-flex items-center justify-center bg-[#0A0A0A] border-2 border-[#0A0A0A] text-[#FFFFFF] px-10 py-5 rounded-lg font-black text-lg relative overflow-hidden transition"
+        class="btn-wave inline-flex items-center justify-center border-2 border-[#C8A300] text-[#C8A300] px-10 py-5 rounded-lg font-black text-lg relative overflow-hidden transition"
       >
         <span>EMPEZAR AHORA</span>
       </a>

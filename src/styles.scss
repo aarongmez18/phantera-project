@@ -87,3 +87,46 @@ body::after {
 .btn-wave:hover h3 {
   color: #0A0A0A !important;
 }
+
+
+// Directiva scroll
+.reveal {
+  opacity: 0;
+  transition:
+    opacity 0.8s ease,
+    transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+.reveal-fade-up {
+  transform: translateY(48px);
+}
+
+.reveal-fade-left {
+  transform: translateX(-56px);
+}
+
+.reveal-fade-right {
+  transform: translateX(56px);
+}
+
+.reveal-zoom-in {
+  transform: scale(0.92);
+}
+
+.reveal-fade-in {
+  transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
