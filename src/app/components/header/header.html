@@ -1,0 +1,124 @@
+<header class="fixed top-0 left-0 z-50 w-full bg-[#0A0A0A]/90 backdrop-blur-md border-b border-[#C8A300]/40">
+  <div class="max-w-7xl mx-auto px-6 md:px-12 h-20 flex items-center justify-between">
+
+    <!-- Logo -->
+    <a routerLink="/" class="flex items-center gap-3" (click)="closeMenu()">
+      <img
+        src="/logo/ISO_BLANCO.png"
+        alt="Panthera Project"
+        class="h-30 md:h-35 lg:h-40 w-auto select-none pointer-events-none"
+        draggable="false"
+      />
+    </a>
+
+    <!-- Desktop nav -->
+    <nav class="hidden md:flex items-center gap-8">
+      <a
+        routerLink="/"
+        routerLinkActive="!text-[#C8A300]"
+        [routerLinkActiveOptions]="{ exact: true }"
+        class="text-[#FFFFFF] hover:text-[#C8A300] font-bold transition"
+      >
+        INICIO
+      </a>
+
+      <a
+        routerLink="/panthera"
+        routerLinkActive="!text-[#C8A300]"
+        class="text-[#FFFFFF] hover:text-[#C8A300] font-bold transition"
+      >
+        PANTHERA
+      </a>
+
+      <a
+        routerLink="/sobre-julia"
+        routerLinkActive="!text-[#C8A300]"
+        class="text-[#FFFFFF] hover:text-[#C8A300] font-bold transition"
+      >
+        SOBRE JULIA
+      </a>
+
+      <a
+        routerLink="/marcas-aliadas"
+        routerLinkActive="!text-[#C8A300]"
+        class="text-[#FFFFFF] hover:text-[#C8A300] font-bold transition"
+      >
+        MARCAS ALIADAS
+      </a>
+    </nav>
+
+    <!-- Desktop button -->
+    <a
+      routerLink="/contacto"
+      class="btn-wave hidden md:inline-flex items-center justify-center border-2 border-[#C8A300] text-[#C8A300] px-6 py-3 rounded-lg font-black transition relative overflow-hidden"
+    >
+      <span class="relative z-10">
+        ÚNETE
+      </span>
+    </a>
+
+    <!-- Mobile button -->
+    <button
+      type="button"
+      class="md:hidden flex flex-col gap-1.5"
+      (click)="toggleMenu()"
+      aria-label="Abrir menú"
+    >
+      <span class="w-7 h-0.5 bg-[#FFFFFF]"></span>
+      <span class="w-7 h-0.5 bg-[#FFFFFF]"></span>
+      <span class="w-7 h-0.5 bg-[#FFFFFF]"></span>
+    </button>
+  </div>
+
+  <!-- Mobile nav -->
+  @if (menuOpen()) {
+    <nav class="md:hidden bg-[#0A0A0A] border-t border-[#C8A300]/40 px-6 py-6 flex flex-col gap-5">
+      <a
+        routerLink="/"
+        routerLinkActive="!text-[#C8A300]"
+        [routerLinkActiveOptions]="{ exact: true }"
+        class="text-[#FFFFFF] hover:text-[#C8A300] text-lg font-bold transition"
+        (click)="closeMenu()"
+      >
+        INICIO
+      </a>
+
+      <a
+        routerLink="/panthera"
+        routerLinkActive="!text-[#C8A300]"
+        class="text-[#FFFFFF] hover:text-[#C8A300] text-lg font-bold transition"
+        (click)="closeMenu()"
+      >
+        PANTHERA
+      </a>
+
+      <a
+        routerLink="/sobre-julia"
+        routerLinkActive="!text-[#C8A300]"
+        class="text-[#FFFFFF] hover:text-[#C8A300] text-lg font-bold transition"
+        (click)="closeMenu()"
+      >
+        SOBRE JULIA
+      </a>
+
+      <a
+        routerLink="/marcas-aliadas"
+        routerLinkActive="!text-[#C8A300]"
+        class="text-[#FFFFFF] hover:text-[#C8A300] text-lg font-bold transition"
+        (click)="closeMenu()"
+      >
+        MARCAS ALIADAS
+      </a>
+
+      <a
+        routerLink="/contacto"
+        class="btn-wave w-fit border-2 border-[#C8A300] text-[#C8A300] px-6 py-3 rounded-lg font-black relative overflow-hidden"
+        (click)="closeMenu()"
+      >
+        <span class="relative z-10">
+          ÚNETE
+        </span>
+      </a>
+    </nav>
+  }
+</header>

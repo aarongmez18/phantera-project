@@ -1,1 +1,89 @@
-/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Montserrat:wght@400;500;600;700;800;900&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --color-phantera-black: #0A0A0A;
+  --color-phantera-gold: #C8A300;
+  --color-phantera-white: #FFFFFF;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100%;
+}
+
+body {
+  font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+  background: #000;
+}
+
+/* Fondo global */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background-image: url("/img/background.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0.25;
+  z-index: -2;
+}
+
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: #0A0A0A;
+  opacity: 0.70;
+  z-index: -1;
+}
+
+.font-display {
+  font-family: 'Anton', sans-serif;
+  letter-spacing: 0.02em;
+}
+
+// BOTONES EFECTO WAVE
+.btn-wave {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  color: #C8A300;
+}
+
+.btn-wave::before {
+  content: "";
+  position: absolute;
+  left: -35%;
+  bottom: -120%;
+  width: 170%;
+  height: 250%;
+  background: #C8A300;
+  border-radius: 45% 55% 40% 60%;
+  transform: rotate(-18deg) translateY(70%);
+  transition: transform 0.45s ease;
+  z-index: 0;
+}
+
+.btn-wave:hover::before {
+  transform: rotate(-18deg) translateY(0%);
+}
+
+.btn-wave > span,
+.btn-wave span,
+.btn-wave p,
+.btn-wave h3 {
+  position: relative;
+  z-index: 10;
+  transition: color 0.45s ease;
+}
+
+.btn-wave:hover,
+.btn-wave:hover span,
+.btn-wave:hover p,
+.btn-wave:hover h3 {
+  color: #0A0A0A !important;
+}
