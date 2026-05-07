@@ -32,7 +32,9 @@
           class="flex flex-col gap-2 text-2xl md:text-5xl font-black leading-tight uppercase"
         >
           <p>Es una forma de vivir</p>
-          <p class="text-[#FFFFFF]/75">el entrenamiento.</p>
+              <p class="bg-[#C8A300] text-[#0A0A0A] px-4 md:px-3 py-2 md:py-3 rounded-md">
+        el entrenamiento.
+              </p>
         </div>
 
         <p
@@ -104,7 +106,7 @@
           <span class="text-[#C8A300]">carácter</span>
         </p>
 
-        <p class="text-lg md:text-xl text-[#FFFFFF]/65 leading-relaxed max-w-2xl">
+        <p class="text-lg md:text-xl text-[#FFFFFF]/65 leading-relaxed max-w-2xl italic">
           Panthera une trabajo físico, estructura y mentalidad para que el entrenamiento
           tenga una dirección real. No se trata de hacer más por hacer. Se trata de
           avanzar con intención.
@@ -143,37 +145,39 @@
     </div>
 
   </div>
+<div class="panthera-strip">
 
-  <!-- Galería full width pegada abajo -->
-  <div
-    reveal="fade-up"
-    [revealDelay]="140"
-    class="pro-strip-gallery"
-  >
-    <div class="pro-strip-panel pro-strip-panel-1">
+  <div class="panthera-panel">
+    <div class="panthera-media">
       <img
-        src="/img/foto_julia.jpg"
+        src="/img/phantera/panthera_1.jpg"
         alt="Entrenamiento Panthera 1"
         draggable="false"
       />
     </div>
+  </div>
 
-    <div class="pro-strip-panel pro-strip-panel-2">
+  <div class="panthera-panel">
+    <div class="panthera-media">
       <img
-        src="/img/background.png"
+        src="/img/phantera/panthera_3.png"
         alt="Entrenamiento Panthera 2"
         draggable="false"
       />
     </div>
+  </div>
 
-    <div class="pro-strip-panel pro-strip-panel-3">
+  <div class="panthera-panel">
+    <div class="panthera-media">
       <img
-        src="/img/motivacion.png"
+        src="/img/phantera/panthera_2.jpg"
         alt="Entrenamiento Panthera 3"
         draggable="false"
       />
     </div>
   </div>
+
+</div>
 </section>
 
   <!-- PRINCIPIOS -->
@@ -205,9 +209,6 @@
           [revealDelay]="0"
           class="rounded-[32px] border border-[#C8A300]/25 bg-[linear-gradient(145deg,rgba(255,255,255,0.07),rgba(255,255,255,0.02))] p-8 md:p-10 shadow-[0_22px_60px_rgba(0,0,0,0.32)] hover:-translate-y-2 hover:border-[#C8A300]/60 transition-all duration-500"
         >
-          <p class="text-[#C8A300]/55 text-sm font-black tracking-[0.25em] uppercase">
-            01
-          </p>
           <h3 class="mt-5 font-display text-4xl md:text-5xl uppercase leading-none text-[#FFFFFF]">
             Disciplina
             <span class="text-[#C8A300]">antes que motivación</span>
@@ -219,9 +220,6 @@
           [revealDelay]="120"
           class="rounded-[32px] border border-[#C8A300]/25 bg-[linear-gradient(145deg,rgba(255,255,255,0.07),rgba(255,255,255,0.02))] p-8 md:p-10 shadow-[0_22px_60px_rgba(0,0,0,0.32)] hover:-translate-y-2 hover:border-[#C8A300]/60 transition-all duration-500"
         >
-          <p class="text-[#C8A300]/55 text-sm font-black tracking-[0.25em] uppercase">
-            02
-          </p>
           <h3 class="mt-5 font-display text-4xl md:text-5xl uppercase leading-none text-[#FFFFFF]">
             Constancia
             <span class="text-[#C8A300]">antes que intensidad</span>
@@ -233,9 +231,6 @@
           [revealDelay]="240"
           class="rounded-[32px] border border-[#C8A300]/25 bg-[linear-gradient(145deg,rgba(255,255,255,0.07),rgba(255,255,255,0.02))] p-8 md:p-10 shadow-[0_22px_60px_rgba(0,0,0,0.32)] hover:-translate-y-2 hover:border-[#C8A300]/60 transition-all duration-500"
         >
-          <p class="text-[#C8A300]/55 text-sm font-black tracking-[0.25em] uppercase">
-            03
-          </p>
           <h3 class="mt-5 font-display text-4xl md:text-5xl uppercase leading-none text-[#FFFFFF]">
             Proceso
             <span class="text-[#C8A300]">antes que resultado</span>
@@ -247,9 +242,7 @@
           [revealDelay]="360"
           class="rounded-[32px] border border-[#C8A300]/25 bg-[linear-gradient(145deg,rgba(255,255,255,0.07),rgba(255,255,255,0.02))] p-8 md:p-10 shadow-[0_22px_60px_rgba(0,0,0,0.32)] hover:-translate-y-2 hover:border-[#C8A300]/60 transition-all duration-500"
         >
-          <p class="text-[#C8A300]/55 text-sm font-black tracking-[0.25em] uppercase">
-            04
-          </p>
+
           <h3 class="mt-5 font-display text-4xl md:text-5xl uppercase leading-none text-[#FFFFFF]">
             Mentalidad
             <span class="text-[#C8A300]">antes que <br> ego</span>
@@ -352,31 +345,35 @@
   </section>
 
 
-  <!-- CTA FINAL -->
-  <section class="relative w-full bg-[#050505] py-24 md:py-32 px-6 md:px-12 overflow-hidden">
-    <div class="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(200,163,0,0.16),transparent_32%),linear-gradient(180deg,#050505_0%,#0A0A0A_100%)]"></div>
+
+<!-- CTA FINAL -->
+<section class="relative w-full bg-[#F3F0E6] py-24 md:py-32 px-6 md:px-12 overflow-hidden">
+
+  <div class="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(200,163,0,0.12),transparent_32%)]"></div>
 
     <div
       reveal="fade-up"
       class="relative z-10 max-w-5xl mx-auto text-center flex flex-col items-center gap-8"
     >
-      <p class="text-[#C8A300] font-black tracking-[0.35em] uppercase text-sm">
+      <p class="text-[#000000] font-black tracking-[0.35em] uppercase text-sm">
         Panthera Project
       </p>
 
-      <h2 class="font-display text-5xl md:text-7xl lg:text-8xl text-[#FFFFFF] leading-none uppercase">
+      <h2 class="font-display text-5xl md:text-7xl lg:text-8xl text-[#000000] leading-none uppercase">
         No se trata de
         <br />
-        <span class="text-[#C8A300]">entrenar más</span>
+        <span class="text-[#C8A300]">entrenar más</span><br />
       </h2>
+      <h3 class="font-display text-3xl md:text-4l lg:text-6xl text-[#000000] leading-none uppercase">
+        <span class="bg-[#C8A300] text-[#0A0A0A] px-4 md:px-3 py-2 md:py-3 rounded-md">
+          Se trata de entrenar mejor.
+        </span>
+      </h3>
 
-      <p class="text-xl md:text-3xl text-[#FFFFFF]/75 font-bold italic leading-relaxed">
-        Se trata de entrenar mejor.
-      </p>
 
       <a
         routerLink="/contacto"
-        class="btn-wave inline-flex items-center justify-center border-2 border-[#C8A300] text-[#C8A300] px-10 py-5 rounded-lg font-black text-lg relative overflow-hidden transition"
+        class="btn-wave inline-flex items-center justify-center border-2 border-[#000000] bg-[#000000] text-[#000000] px-10 py-5 rounded-lg font-black text-lg relative overflow-hidden transition"
       >
         <span>FORMAR PARTE DE PANTHERA</span>
       </a>
