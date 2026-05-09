@@ -5,6 +5,7 @@ import { AvisoLegal } from './pages/aviso-legal/aviso-legal';
 import { Privacidad } from './pages/privacidad/privacidad';
 import { Cookies } from './pages/cookies/cookies';
 import { Panthera } from './pages/panthera/panthera';
+import { NotFound } from './shared/not-found/not-found';
 
 export const routes: Routes = [
   {
@@ -34,6 +35,6 @@ export const routes: Routes = [
   },
   {
     path: '**',
-    redirectTo: '',
+    component: NotFound,
   },
 ];

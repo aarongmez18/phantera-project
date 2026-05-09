@@ -1,75 +1,85 @@
 <main class="min-h-screen bg-[#050505] text-[#FFFFFF] overflow-hidden">
 
-  <!-- HERO -->
-  <section class="relative min-h-screen flex items-center px-6 md:px-12 pt-32 pb-24 overflow-hidden">
-    <div class="absolute inset-0 bg-[radial-gradient(circle_at_18%_22%,rgba(200,163,0,0.18),transparent_30%),radial-gradient(circle_at_80%_20%,rgba(200,163,0,0.08),transparent_28%),linear-gradient(135deg,#050505_0%,#0A0A0A_45%,#050505_100%)]"></div>
-    <div class="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-b from-transparent to-[#050505]"></div>
+<!-- HERO -->
+<section class="relative min-h-screen flex items-center px-6 md:px-12 pt-32 pb-24 overflow-hidden">
 
-    <div class="relative z-10 max-w-7xl mx-auto w-full">
-      <div class="max-w-5xl flex flex-col gap-8">
+  <!-- Imagen fondo -->
+  <div
+    class=" absolute inset-0 bg-cover bg-[center_top_-120px] scale-105"
+    style="background-image:url('/img/phantera/hero.jpg');"
+  ></div>
 
-        <p
-          reveal="fade-up"
-          [revealDelay]="0"
-          class="text-[#C8A300] font-black tracking-[0.35em] uppercase text-sm md:text-base"
-        >
-          Panthera Project
+
+
+  <!-- Fade inferior -->
+  <div class="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-b from-transparent to-[#050505]"></div>
+
+  <div class="relative z-10 max-w-7xl mx-auto w-full">
+    <div class="max-w-5xl flex flex-col gap-8">
+
+      <p
+        reveal="fade-up"
+        [revealDelay]="0"
+        class="text-[#C8A300] font-black tracking-[0.35em] uppercase text-sm md:text-base"
+      >
+        Panthera Project
+      </p>
+
+      <h1
+        reveal="fade-up"
+        [revealDelay]="120"
+        class="font-display text-[clamp(3.4rem,10vw,9rem)] leading-none uppercase tracking-tight"
+      >
+        No es solo
+        <br />
+        <span class="text-[#C8A300]">una marca</span>
+      </h1>
+
+      <div
+        reveal="fade-up"
+        [revealDelay]="220"
+        class="flex flex-col gap-2 text-2xl md:text-5xl font-black leading-tight uppercase"
+      >
+        <p>Es una forma de vivir</p>
+
+        <p class="bg-[#C8A300] text-[#0A0A0A] px-4 md:px-3 py-2 md:py-3 rounded-md w-fit">
+          el entrenamiento.
         </p>
-
-        <h1
-          reveal="fade-up"
-          [revealDelay]="120"
-          class="font-display text-[clamp(3.4rem,10vw,9rem)] leading-none uppercase tracking-tight"
-        >
-          No es solo
-          <br />
-          <span class="text-[#C8A300]">una marca</span>
-        </h1>
-
-        <div
-          reveal="fade-up"
-          [revealDelay]="220"
-          class="flex flex-col gap-2 text-2xl md:text-5xl font-black leading-tight uppercase"
-        >
-          <p>Es una forma de vivir</p>
-              <p class="bg-[#C8A300] text-[#0A0A0A] px-4 md:px-3 py-2 md:py-3 rounded-md">
-        el entrenamiento.
-              </p>
-        </div>
-
-        <p
-          reveal="fade-up"
-          [revealDelay]="320"
-          class="text-xl md:text-2xl text-[#FFFFFF]/75 leading-relaxed max-w-3xl italic"
-        >
-          Panthera Project es una plataforma de entrenamiento y desarrollo personal.
-          Une Muay Thai, preparación física y mentalidad para ayudarte a construir
-          una versión más fuerte, más disciplinada y más segura de ti.
-        </p>
-
-        <div
-          reveal="fade-up"
-          [revealDelay]="420"
-          class="flex flex-col sm:flex-row gap-4 pt-4"
-        >
-          <a
-            routerLink="/contacto"
-            class="btn-wave inline-flex items-center justify-center border-2 border-[#C8A300] text-[#C8A300] px-8 py-4 rounded-lg font-black relative overflow-hidden transition"
-          >
-            <span>FORMAR PARTE DE PANTHERA</span>
-          </a>
-
-          <a
-            href="#principios"
-            class="inline-flex items-center justify-center border-2 border-[#FFFFFF]/20 text-[#FFFFFF]/75 px-8 py-4 rounded-lg font-black hover:border-[#C8A300] hover:text-[#C8A300] transition"
-          >
-            DESCUBRIR MÁS
-          </a>
-        </div>
-
       </div>
+
+      <p
+        reveal="fade-up"
+        [revealDelay]="320"
+        class="text-xl md:text-2xl text-[#FFFFFF]/75 leading-relaxed max-w-3xl italic"
+      >
+        Panthera Project es una plataforma de entrenamiento y desarrollo personal.
+        Une Muay Thai, preparación física y mentalidad para ayudarte a construir
+        una versión más fuerte, más disciplinada y más segura de ti.
+      </p>
+
+      <div
+        reveal="fade-up"
+        [revealDelay]="420"
+        class="flex flex-col sm:flex-row gap-4 pt-4"
+      >
+        <a
+          routerLink="/contacto"
+          class="btn-wave inline-flex items-center justify-center border-2 border-[#C8A300] text-[#C8A300] px-8 py-4 rounded-lg font-black relative overflow-hidden transition"
+        >
+          <span>FORMAR PARTE DE PANTHERA</span>
+        </a>
+
+        <a
+          href="#principios"
+          class="inline-flex items-center justify-center border-2 border-[#FFFFFF]/20 text-[#FFFFFF]/75 px-8 py-4 rounded-lg font-black hover:border-[#C8A300] hover:text-[#C8A300] transition"
+        >
+          DESCUBRIR MÁS
+        </a>
+      </div>
+
     </div>
-  </section>
+  </div>
+</section>
 
 
   <!-- INTRO -->
