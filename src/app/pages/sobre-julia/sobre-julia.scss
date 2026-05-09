@@ -1,0 +1,55 @@
+.marquee-wrap {
+  display: flex;
+  overflow: hidden;
+}
+
+.marquee-row {
+  display: flex;
+  width: max-content;
+  animation: marqueeMove 24s linear infinite;
+}
+
+.marquee-row.reverse {
+  animation-direction: reverse;
+  animation-duration: 18s;
+}
+
+.marquee-content {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  gap: 5rem;
+  padding-right: 5rem;
+}
+
+.marquee-content.small {
+  gap: 3rem;
+  padding-right: 3rem;
+}
+
+.marquee-content span {
+
+  text-transform: uppercase;
+  white-space: nowrap;
+  color: white;
+}
+
+
+.marquee-content .gold {
+  color: #C8A300;
+}
+
+.marquee-content .stroke {
+  color: transparent;
+  -webkit-text-stroke: 1px rgba(255,255,255,0.22);
+}
+
+@keyframes marqueeMove {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}
