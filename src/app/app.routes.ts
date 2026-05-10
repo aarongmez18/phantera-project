@@ -7,6 +7,7 @@ import { Cookies } from './pages/cookies/cookies';
 import { Panthera } from './pages/panthera/panthera';
 import { NotFound } from './shared/not-found/not-found';
 import { SobreJulia } from './pages/sobre-julia/sobre-julia';
+import { Servicios } from './pages/servicios/servicios';
 
 export const routes: Routes = [
   {
@@ -38,6 +39,11 @@ export const routes: Routes = [
     path: 'sobre-julia',
     component: SobreJulia,
     title: 'Sobre Julia | Panthera Project',
+  },
+  {
+    path: 'servicios',
+    component: Servicios,
+    title: 'Servicios | Panthera Project',
   },
   {
     path: '**',
