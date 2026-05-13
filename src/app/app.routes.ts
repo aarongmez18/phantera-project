@@ -8,6 +8,7 @@ import { Panthera } from './pages/panthera/panthera';
 import { NotFound } from './shared/not-found/not-found';
 import { SobreJulia } from './pages/sobre-julia/sobre-julia';
 import { Servicios } from './pages/servicios/servicios';
+import { Contacto } from './pages/contacto/contacto';
 
 export const routes: Routes = [
   {
@@ -44,6 +45,11 @@ export const routes: Routes = [
     path: 'servicios',
     component: Servicios,
     title: 'Servicios | Panthera Project',
+  },
+  {
+    path: 'contacto',
+    component: Contacto,
+    title: 'Contacto | Panthera Project',
   },
   {
     path: '**',

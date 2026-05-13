@@ -1,0 +1,200 @@
+<main class="min-h-screen bg-[#050505] text-[#FFFFFF] overflow-hidden">
+
+  <!-- HERO -->
+  <section class="relative min-h-screen flex items-center px-6 md:px-12 pt-32 pb-24 overflow-hidden">
+
+    <div
+      #heroBg
+      class="absolute inset-0 bg-cover bg-center opacity-60 scale-125 will-change-transform"
+      style="background-image:url('/img/contacto/hero.jpg');"
+    ></div>
+
+    <div class="absolute inset-0 bg-gradient-to-b from-[#050505]/20 via-[#050505]/75 to-[#050505]"></div>
+
+    <div class="absolute top-[10%] left-[5%] w-[420px] h-[420px] rounded-full bg-[#C8A300]/10 blur-[140px]"></div>
+
+    <div class="relative z-10 max-w-7xl mx-auto w-full">
+
+      <div class="max-w-5xl flex flex-col gap-8">
+
+        <p class="text-[#C8A300] font-black tracking-[0.35em] uppercase text-sm md:text-base">
+          Contacto
+        </p>
+
+        <h1 class="font-display text-[clamp(3.5rem,10vw,9rem)] leading-none uppercase tracking-tight">
+          Hablemos
+        </h1>
+
+        <p class="text-xl md:text-2xl text-[#FFFFFF]/70 leading-relaxed italic max-w-3xl">
+          Para entrenamientos, seminarios, colaboraciones o cualquier propuesta relacionada con Panthera Project.
+        </p>
+
+        <div class="flex flex-wrap gap-4 pt-4">
+          <a href="#formulario"
+            class="btn-wave inline-flex items-center justify-center border-2 border-[#C8A300] text-[#C8A300] px-8 py-4 rounded-lg font-black">
+            ENVIAR MENSAJE
+          </a>
+
+          <a href="https://wa.me/34656410733" target="_blank"
+            class="inline-flex items-center justify-center border-2 border-white/20 text-white/75 px-8 py-4 rounded-lg font-black hover:border-[#C8A300] hover:text-[#C8A300] transition">
+            WHATSAPP
+          </a>
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- INTRO -->
+  <section class="relative border-y border-[#C8A300]/15 bg-[#0A0A0A] overflow-hidden">
+
+    <div class="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(200,163,0,0.08),transparent_38%)]"></div>
+
+    <div class="relative z-10 max-w-7xl mx-auto px-6 md:px-12 py-20">
+
+      <div class="grid lg:grid-cols-2 gap-16 items-center">
+
+        <!-- TEXTO -->
+        <div class="flex flex-col gap-8">
+
+          <p class="text-[#C8A300] uppercase tracking-[0.35em] text-sm font-black">
+            Panthera Project
+          </p>
+
+          <h2 class="font-display text-5xl md:text-7xl leading-none uppercase">
+            Construyamos
+            <span class="text-[#C8A300]">algo real</span>
+          </h2>
+
+          <p class="text-[#FFFFFF]/65 text-lg md:text-xl italic leading-relaxed max-w-2xl">
+            Si quieres entrenar conmigo, solicitar asesoría o explorar una colaboración, puedes escribirme directamente.
+          </p>
+
+        </div>
+
+        <!-- INFO -->
+        <div class="relative overflow-hidden rounded-[36px] border border-[#C8A300]/20 bg-[linear-gradient(145deg,rgba(255,255,255,0.06),rgba(255,255,255,0.02))] p-10">
+
+          <div class="absolute top-0 right-0 h-56 w-56 bg-[#C8A300]/10 blur-3xl"></div>
+
+          <div class="flex flex-col gap-8">
+
+            <p class="text-[#C8A300]/55 uppercase tracking-[0.25em] text-xs font-black">
+              Contacto directo
+            </p>
+
+            <h3 class="font-display text-5xl md:text-6xl uppercase leading-none">
+              Respuesta <span class="text-[#C8A300]">personal</span>
+            </h3>
+
+            <div class="h-px w-full bg-white/10"></div>
+
+            <div class="flex flex-col gap-4 text-white/70">
+
+            <a href="mailto:juliapantera2025@gmail.com"
+                class="group flex justify-between text-white/70 hover:text-[#C8A300] transition">
+                <span>Email</span>
+                <span class="group-hover:translate-x-1 transition">juliapantera2025@gmail.com</span>
+            </a>
+
+            <a href="tel:656410733"
+                class="group flex justify-between text-white/70 hover:text-[#C8A300] transition">
+                <span>Tel</span>
+                <span class="group-hover:translate-x-1 transition">656 410 733</span>
+            </a>
+
+            <a href="https://www.instagram.com/panthera.project/"
+                target="_blank"
+                class="group flex justify-between text-white/70 hover:text-[#C8A300] transition">
+                <span>Instagram</span>
+                <span class="group-hover:translate-x-1 transition">@panthera.project</span>
+            </a>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- FORMULARIO -->
+  <section id="formulario" class="relative py-24 px-6 md:px-12 bg-[#050505]">
+
+    <div class="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(200,163,0,0.10),transparent_30%)]"></div>
+
+    <div class="relative z-10 max-w-5xl mx-auto">
+
+        <div class="mb-8 flex flex-col gap-3">
+        <p class="text-[#C8A300] uppercase tracking-[0.35em] text-sm font-black">
+            Formulario
+        </p>
+
+        <h2 class="font-display text-4xl md:text-5xl uppercase">
+            Envíame un mensaje
+        </h2>
+
+        <p class="text-white/60 italic">
+            Te responderé personalmente lo antes posible.
+        </p>
+        </div>
+
+      <!-- ESTADOS -->
+      <div *ngIf="isSent" class="mb-6 p-5 rounded-xl border border-green-500/40 bg-green-500/10">
+        Mensaje enviado correctamente.
+      </div>
+
+      <div *ngIf="isError" class="mb-6 p-5 rounded-xl border border-red-500/40 bg-red-500/10">
+        Error al enviar. Inténtalo de nuevo.
+      </div>
+
+      <form (ngSubmit)="enviarFormulario()" #f="ngForm" class="flex flex-col gap-6">
+
+        <input
+          name="nombre"
+          [(ngModel)]="form.nombre"
+          required
+          placeholder="Nombre"
+          class="h-14 px-5 rounded-xl bg-white/5 border border-white/10 focus:border-[#C8A300] outline-none"
+        />
+
+        <input
+          name="email"
+          [(ngModel)]="form.email"
+          required
+          type="email"
+          placeholder="Email"
+          class="h-14 px-5 rounded-xl bg-white/5 border border-white/10 focus:border-[#C8A300] outline-none"
+        />
+
+        <textarea
+          name="mensaje"
+          [(ngModel)]="form.mensaje"
+          required
+          rows="6"
+          placeholder="Mensaje"
+          class="p-5 rounded-xl bg-white/5 border border-white/10 focus:border-[#C8A300] outline-none resize-none"
+        ></textarea>
+
+        <button
+          type="submit"
+          [disabled]="isSending || !f.valid"
+          class="h-14 rounded-xl border-2 border-[#C8A300] text-[#C8A300] font-black disabled:opacity-50"
+        >
+          <span *ngIf="!isSending">ENVIAR MENSAJE</span>
+          <span *ngIf="isSending">ENVIANDO...</span>
+        </button>
+
+      </form>
+
+    </div>
+
+  </section>
+
+</main>
