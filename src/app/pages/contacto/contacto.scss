@@ -1,0 +1,19 @@
+.contact-submit-btn {
+  color: #C8A300;
+}
+
+.contact-submit-btn span {
+  color: inherit;
+}
+
+.contact-submit-btn:hover:not(:disabled) {
+  color: #050505;
+}
+
+.contact-submit-btn:hover:not(:disabled) span {
+  color: #050505 !important;
+}
+
+.contact-submit-btn:disabled:hover {
+  color: #C8A300;
+}

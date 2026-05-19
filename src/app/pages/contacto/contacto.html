@@ -3,11 +3,8 @@
   <!-- HERO -->
   <section class="relative min-h-screen flex items-center px-6 md:px-12 pt-32 pb-24 overflow-hidden">
 
-    <div
-      #heroBg
-      class="absolute inset-0 bg-cover bg-center opacity-60 scale-125 will-change-transform"
-      style="background-image:url('/img/contacto/hero.jpg');"
-    ></div>
+    <div #heroBg class="absolute inset-0 bg-cover bg-center opacity-60 scale-125 will-change-transform"
+      style="background-image:url('/img/contacto/hero.jpg');"></div>
 
     <div class="absolute inset-0 bg-gradient-to-b from-[#050505]/20 via-[#050505]/75 to-[#050505]"></div>
 
@@ -17,22 +14,27 @@
 
       <div class="max-w-5xl flex flex-col gap-8">
 
-        <p class="text-[#C8A300] font-black tracking-[0.35em] uppercase text-sm md:text-base">
+        <p reveal="fade-up" class="text-[#C8A300] font-black tracking-[0.35em] uppercase text-sm md:text-base">
           Contacto
         </p>
 
-        <h1 class="font-display text-[clamp(3.5rem,10vw,9rem)] leading-none uppercase tracking-tight">
+        <h1 reveal="fade-up" [revealDelay]="120"
+          class="font-display text-[clamp(3.5rem,10vw,9rem)] leading-none uppercase tracking-tight">
           Hablemos
         </h1>
 
-        <p class="text-xl md:text-2xl text-[#FFFFFF]/70 leading-relaxed italic max-w-3xl">
+        <p reveal="fade-up" [revealDelay]="240"
+          class="text-xl md:text-2xl text-[#FFFFFF]/70 leading-relaxed italic max-w-3xl">
           Para entrenamientos, seminarios, colaboraciones o cualquier propuesta relacionada con Panthera Project.
         </p>
 
-        <div class="flex flex-wrap gap-4 pt-4">
+        <div reveal="fade-up" [revealDelay]="360" class="flex flex-wrap gap-4 pt-4">
           <a href="#formulario"
-            class="btn-wave inline-flex items-center justify-center border-2 border-[#C8A300] text-[#C8A300] px-8 py-4 rounded-lg font-black">
-            ENVIAR MENSAJE
+            class="btn-wave inline-flex items-center justify-center border-2 border-[#C8A300] text-[#C8A300] px-8 py-4 rounded-lg font-black relative overflow-hidden transition">
+            <span class="relative z-10 transition-colors duration-300 group-hover:text-[#050505]">
+              VOLVER AL INICIO
+            </span>
+
           </a>
 
           <a href="https://wa.me/34656410733" target="_blank"
@@ -59,27 +61,29 @@
         <!-- TEXTO -->
         <div class="flex flex-col gap-8">
 
-          <p class="text-[#C8A300] uppercase tracking-[0.35em] text-sm font-black">
+          <p reveal="fade-up" class="text-[#C8A300] uppercase tracking-[0.35em] text-sm font-black">
             Panthera Project
           </p>
 
-          <h2 class="font-display text-5xl md:text-7xl leading-none uppercase">
+          <h2 reveal="fade-up" [revealDelay]="120" class="font-display text-5xl md:text-7xl leading-none uppercase">
             Construyamos
             <span class="text-[#C8A300]">algo real</span>
           </h2>
 
-          <p class="text-[#FFFFFF]/65 text-lg md:text-xl italic leading-relaxed max-w-2xl">
+          <p reveal="fade-up" [revealDelay]="240"
+            class="text-[#FFFFFF]/65 text-lg md:text-xl italic leading-relaxed max-w-2xl">
             Si quieres entrenar conmigo, solicitar asesoría o explorar una colaboración, puedes escribirme directamente.
           </p>
 
         </div>
 
         <!-- INFO -->
-        <div class="relative overflow-hidden rounded-[36px] border border-[#C8A300]/20 bg-[linear-gradient(145deg,rgba(255,255,255,0.06),rgba(255,255,255,0.02))] p-10">
+        <div reveal="fade-left" [revealDelay]="220"
+          class="relative overflow-hidden rounded-[36px] border border-[#C8A300]/20 bg-[linear-gradient(145deg,rgba(255,255,255,0.06),rgba(255,255,255,0.02))] p-10">
 
           <div class="absolute top-0 right-0 h-56 w-56 bg-[#C8A300]/10 blur-3xl"></div>
 
-          <div class="flex flex-col gap-8">
+          <div class="relative z-10 flex flex-col gap-8">
 
             <p class="text-[#C8A300]/55 uppercase tracking-[0.25em] text-xs font-black">
               Contacto directo
@@ -93,24 +97,23 @@
 
             <div class="flex flex-col gap-4 text-white/70">
 
-            <a href="mailto:juliapantera2025@gmail.com"
-                class="group flex justify-between text-white/70 hover:text-[#C8A300] transition">
+              <a href="mailto:juliapantera2025@gmail.com"
+                class="group flex flex-col gap-1 sm:flex-row sm:justify-between text-white/70 hover:text-[#C8A300] transition">
                 <span>Email</span>
                 <span class="group-hover:translate-x-1 transition">juliapantera2025@gmail.com</span>
-            </a>
+              </a>
 
-            <a href="tel:656410733"
-                class="group flex justify-between text-white/70 hover:text-[#C8A300] transition">
-                <span>Tel</span>
+              <a href="tel:656410733"
+                class="group flex flex-col gap-1 sm:flex-row sm:justify-between text-white/70 hover:text-[#C8A300] transition">
+                <span>Teléfono</span>
                 <span class="group-hover:translate-x-1 transition">656 410 733</span>
-            </a>
+              </a>
 
-            <a href="https://www.instagram.com/panthera.project/"
-                target="_blank"
-                class="group flex justify-between text-white/70 hover:text-[#C8A300] transition">
+              <a href="https://www.instagram.com/panthera.project/" target="_blank"
+                class="group flex flex-col gap-1 sm:flex-row sm:justify-between text-white/70 hover:text-[#C8A300] transition">
                 <span>Instagram</span>
                 <span class="group-hover:translate-x-1 transition">@panthera.project</span>
-            </a>
+              </a>
 
             </div>
 
@@ -131,64 +134,137 @@
 
     <div class="relative z-10 max-w-5xl mx-auto">
 
-        <div class="mb-8 flex flex-col gap-3">
-        <p class="text-[#C8A300] uppercase tracking-[0.35em] text-sm font-black">
-            Formulario
+      <div class="mb-8 flex flex-col gap-3">
+
+        <p reveal="fade-up" class="text-[#C8A300] uppercase tracking-[0.35em] text-sm font-black">
+          Formulario
         </p>
 
-        <h2 class="font-display text-4xl md:text-5xl uppercase">
-            Envíame un mensaje
+        <h2 reveal="fade-up" [revealDelay]="120" class="font-display text-4xl md:text-5xl uppercase">
+          Envíame un mensaje
         </h2>
 
-        <p class="text-white/60 italic">
-            Te responderé personalmente lo antes posible.
+        <p reveal="fade-up" [revealDelay]="240" class="text-white/60 italic">
+          Te responderé personalmente lo antes posible.
         </p>
-        </div>
+
+      </div>
 
       <!-- ESTADOS -->
-      <div *ngIf="isSent" class="mb-6 p-5 rounded-xl border border-green-500/40 bg-green-500/10">
+      <div *ngIf="isSent" reveal="fade-up" class="mb-6 p-5 rounded-xl border border-green-500/40 bg-green-500/10">
         Mensaje enviado correctamente.
       </div>
 
-      <div *ngIf="isError" class="mb-6 p-5 rounded-xl border border-red-500/40 bg-red-500/10">
+      <div *ngIf="isError && validationErrors.length === 0" reveal="fade-up"
+        class="mb-6 p-5 rounded-xl border border-red-500/40 bg-red-500/10">
         Error al enviar. Inténtalo de nuevo.
       </div>
 
-      <form (ngSubmit)="enviarFormulario()" #f="ngForm" class="flex flex-col gap-6">
+      <form reveal="fade-up" [revealDelay]="320" (ngSubmit)="enviarFormulario(f)" #f="ngForm" novalidate
+        class="flex flex-col gap-6">
 
-        <input
-          name="nombre"
-          [(ngModel)]="form.nombre"
-          required
-          placeholder="Nombre"
-          class="h-14 px-5 rounded-xl bg-white/5 border border-white/10 focus:border-[#C8A300] outline-none"
-        />
+        <!-- NOMBRE -->
+        <div class="flex flex-col gap-2">
+          <input name="nombre" [(ngModel)]="form.nombre" #nombreCtrl="ngModel" required minlength="2" maxlength="80"
+            autocomplete="name" placeholder="Nombre"
+            class="h-14 px-5 rounded-xl bg-white/5 border border-white/10 focus:border-[#C8A300] outline-none transition"
+            [ngClass]="{
+        'border-red-500/70 focus:border-red-500': nombreCtrl.invalid && (nombreCtrl.touched || hasSubmitted)
+      }" [attr.aria-invalid]="nombreCtrl.invalid && (nombreCtrl.touched || hasSubmitted)" />
 
-        <input
-          name="email"
-          [(ngModel)]="form.email"
-          required
-          type="email"
-          placeholder="Email"
-          class="h-14 px-5 rounded-xl bg-white/5 border border-white/10 focus:border-[#C8A300] outline-none"
-        />
+          <p *ngIf="nombreCtrl.errors?.['required'] && (nombreCtrl.touched || hasSubmitted)"
+            class="text-sm text-red-400">
+            El nombre es obligatorio.
+          </p>
 
-        <textarea
-          name="mensaje"
-          [(ngModel)]="form.mensaje"
-          required
-          rows="6"
-          placeholder="Mensaje"
-          class="p-5 rounded-xl bg-white/5 border border-white/10 focus:border-[#C8A300] outline-none resize-none"
-        ></textarea>
+          <p *ngIf="nombreCtrl.errors?.['minlength'] && (nombreCtrl.touched || hasSubmitted)"
+            class="text-sm text-red-400">
+            El nombre debe tener al menos 2 caracteres.
+          </p>
 
-        <button
-          type="submit"
-          [disabled]="isSending || !f.valid"
-          class="h-14 rounded-xl border-2 border-[#C8A300] text-[#C8A300] font-black disabled:opacity-50"
-        >
-          <span *ngIf="!isSending">ENVIAR MENSAJE</span>
-          <span *ngIf="isSending">ENVIANDO...</span>
+          <p *ngIf="nombreCtrl.errors?.['maxlength'] && (nombreCtrl.touched || hasSubmitted)"
+            class="text-sm text-red-400">
+            El nombre no puede superar los 80 caracteres.
+          </p>
+        </div>
+
+        <!-- EMAIL -->
+        <div class="flex flex-col gap-2">
+          <input name="email" [(ngModel)]="form.email" #emailCtrl="ngModel" required type="email" maxlength="120"
+            autocomplete="email" pattern="^[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}$" placeholder="Email"
+            class="h-14 px-5 rounded-xl bg-white/5 border border-white/10 focus:border-[#C8A300] outline-none transition"
+            [ngClass]="{
+        'border-red-500/70 focus:border-red-500': emailCtrl.invalid && (emailCtrl.touched || hasSubmitted)
+      }" [attr.aria-invalid]="emailCtrl.invalid && (emailCtrl.touched || hasSubmitted)" />
+
+          <p *ngIf="emailCtrl.errors?.['required'] && (emailCtrl.touched || hasSubmitted)" class="text-sm text-red-400">
+            El correo electrónico es obligatorio.
+          </p>
+
+          <p *ngIf="(emailCtrl.errors?.['email'] || emailCtrl.errors?.['pattern']) && (emailCtrl.touched || hasSubmitted)"
+            class="text-sm text-red-400">
+            Introduce un correo electrónico válido.
+          </p>
+
+          <p *ngIf="emailCtrl.errors?.['maxlength'] && (emailCtrl.touched || hasSubmitted)"
+            class="text-sm text-red-400">
+            El correo electrónico no puede superar los 120 caracteres.
+          </p>
+        </div>
+
+        <!-- MENSAJE -->
+        <div class="flex flex-col gap-2">
+          <textarea name="mensaje" [(ngModel)]="form.mensaje" #mensajeCtrl="ngModel" required minlength="10"
+            maxlength="1000" rows="6" placeholder="Mensaje"
+            class="p-5 rounded-xl bg-white/5 border border-white/10 focus:border-[#C8A300] outline-none resize-none transition"
+            [ngClass]="{
+        'border-red-500/70 focus:border-red-500': mensajeCtrl.invalid && (mensajeCtrl.touched || hasSubmitted)
+      }" [attr.aria-invalid]="mensajeCtrl.invalid && (mensajeCtrl.touched || hasSubmitted)"></textarea>
+
+          <div class="flex items-center justify-between gap-4">
+            <div>
+              <p *ngIf="mensajeCtrl.errors?.['required'] && (mensajeCtrl.touched || hasSubmitted)"
+                class="text-sm text-red-400">
+                El mensaje es obligatorio.
+              </p>
+
+              <p *ngIf="mensajeCtrl.errors?.['minlength'] && (mensajeCtrl.touched || hasSubmitted)"
+                class="text-sm text-red-400">
+                El mensaje debe tener al menos 10 caracteres.
+              </p>
+
+              <p *ngIf="mensajeCtrl.errors?.['maxlength'] && (mensajeCtrl.touched || hasSubmitted)"
+                class="text-sm text-red-400">
+                El mensaje no puede superar los 1000 caracteres.
+              </p>
+            </div>
+
+            <span class="text-xs text-white/35 whitespace-nowrap">
+              {{ form.mensaje.length }}/1000
+            </span>
+          </div>
+        </div>
+
+        <!-- ERRORES GENERALES -->
+        <div *ngIf="validationErrors.length > 0 && hasSubmitted"
+          class="rounded-xl border border-red-500/40 bg-red-500/10 p-5">
+          <ul class="flex flex-col gap-2 text-sm text-red-200">
+            <li *ngFor="let error of validationErrors">
+              {{ error }}
+            </li>
+          </ul>
+        </div>
+
+        <!-- BOTÓN -->
+        <button type="submit" [disabled]="isSending || f.invalid"
+          class="contact-submit-btn btn-wave group h-14 rounded-xl border-2 border-[#C8A300] text-[#C8A300] font-black disabled:opacity-50 disabled:pointer-events-none relative overflow-hidden transition-colors duration-300 hover:text-[#050505]">
+          <span *ngIf="!isSending" class="relative z-10 transition-colors duration-300 group-hover:text-[#050505]">
+            ENVIAR MENSAJE
+          </span>
+
+          <span *ngIf="isSending" class="relative z-10 transition-colors duration-300">
+            ENVIANDO...
+          </span>
         </button>
 
       </form>

@@ -3,35 +3,49 @@ import {
   Component,
   ElementRef,
   Inject,
+  OnDestroy,
   PLATFORM_ID,
   Renderer2,
-  ViewChild,
-  OnDestroy
+  ViewChild
 } from '@angular/core';
 
+import { CommonModule, isPlatformBrowser } from '@angular/common';
 import { RouterLink } from '@angular/router';
 import { RevealOnScrollDirective } from '../../shared/directives/reveal-on-scroll';
-import { isPlatformBrowser } from '@angular/common';
 
 @Component({
   selector: 'app-servicios',
-  imports: [RouterLink, RevealOnScrollDirective],
+  imports: [CommonModule, RouterLink, RevealOnScrollDirective],
   templateUrl: './servicios.html',
   styleUrl: './servicios.scss',
 })
 export class Servicios implements AfterViewInit, OnDestroy {
 
   @ViewChild('heroBg', { static: true })
-  heroBg!: ElementRef;
+  heroBg!: ElementRef<HTMLElement>;
 
   @ViewChild('cardsContainer')
   cardsContainer!: ElementRef<HTMLDivElement>;
 
-  private autoScroll: any;
+  dots = [0, 1, 2, 3];
 
-  private cardWidth = 0;
+  activeIndex = 0;
 
-  private isResetting = false;
+  private autoScroll: ReturnType<typeof setInterval> | null = null;
+
+  private scrollRaf = 0;
+
+  private resizeRaf = 0;
+
+  private parallaxRaf = 0;
+
+  private isBrowser = false;
+
+  private destroyed = false;
+
+  private prefersReducedMotion = false;
+
+  private removeListeners: Array<() => void> = [];
 
   constructor(
     private renderer: Renderer2,
@@ -39,167 +53,253 @@ export class Servicios implements AfterViewInit, OnDestroy {
   ) {}
 
   ngAfterViewInit(): void {
+    this.isBrowser = isPlatformBrowser(this.platformId);
 
-    if (!isPlatformBrowser(this.platformId)) return;
+    if (!this.isBrowser) return;
+
+    this.prefersReducedMotion =
+      window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
     this.initParallax();
-
-    setTimeout(() => {
-      this.initInfiniteCarousel();
-    }, 100);
+    this.initCarousel();
   }
 
   ngOnDestroy(): void {
-    clearInterval(this.autoScroll);
+    this.destroyed = true;
+
+    this.pauseAutoScroll();
+
+    this.removeListeners.forEach(remove => remove());
+    this.removeListeners = [];
+
+    if (this.scrollRaf) {
+      cancelAnimationFrame(this.scrollRaf);
+    }
+
+    if (this.resizeRaf) {
+      cancelAnimationFrame(this.resizeRaf);
+    }
+
+    if (this.parallaxRaf) {
+      cancelAnimationFrame(this.parallaxRaf);
+    }
   }
 
-  initParallax() {
+  private initParallax(): void {
+    if (this.prefersReducedMotion) return;
 
     let lastY = 0;
-    let ticking = false;
 
     const onScroll = () => {
-
       lastY = window.scrollY;
 
-      if (!ticking) {
+      if (this.parallaxRaf) return;
 
-        requestAnimationFrame(() => {
+      this.parallaxRaf = requestAnimationFrame(() => {
+        const y = lastY * 0.35;
 
-          const y = lastY * 0.35;
+        this.renderer.setStyle(
+          this.heroBg.nativeElement,
+          'transform',
+          `translate3d(0, ${y}px, 0) scale(1.15)`
+        );
 
-          this.renderer.setStyle(
-            this.heroBg.nativeElement,
-            'transform',
-            `translate3d(0, ${y}px, 0) scale(1.15)`
-          );
-
-          ticking = false;
-
-        });
-
-        ticking = true;
-      }
+        this.parallaxRaf = 0;
+      });
     };
 
-    window.addEventListener('scroll', onScroll, { passive: true });
+    this.addListener(window, 'scroll', onScroll, { passive: true });
+
+    onScroll();
   }
 
-  scrollCards(direction: 'left' | 'right') {
+  private initCarousel(): void {
+    setTimeout(() => {
+      this.syncActiveIndex();
+      this.startAutoScroll();
+    }, 150);
 
-    const container = this.cardsContainer.nativeElement;
+    this.addListener(window, 'resize', () => {
+      this.onResize();
+    });
 
-    const amount = this.cardWidth;
-
-    container.scrollBy({
-      left: direction === 'right'
-        ? amount
-        : -amount,
-      behavior: 'smooth'
+    this.addListener(document, 'visibilitychange', () => {
+      if (document.hidden) {
+        this.pauseAutoScroll();
+      } else {
+        this.resumeAutoScroll();
+      }
     });
   }
 
-  initInfiniteCarousel() {
+  onCarouselScroll(): void {
+    if (!this.isBrowser) return;
 
-    const container = this.cardsContainer.nativeElement;
+    if (this.scrollRaf) return;
 
-    const originalCards =
-      Array.from(container.querySelectorAll('.service-card'));
-
-    if (!originalCards.length) return;
-
-    originalCards.forEach(card => {
-
-      const clone = card.cloneNode(true) as HTMLElement;
-
-      clone.classList.add('clone-card');
-
-      container.appendChild(clone);
-    });
-
-    const firstCard =
-      container.querySelector('.service-card') as HTMLElement;
-
-    const gap = 24;
-
-    this.cardWidth = firstCard.offsetWidth + gap;
-
-    const originalWidth =
-      this.cardWidth * originalCards.length;
-
-    container.scrollLeft = originalWidth;
-container.addEventListener('scroll', () => {
-
-  if (this.isResetting) return;
-
-  const maxScroll =
-    container.scrollWidth - container.clientWidth;
-
-  /*
-    Llegó al inicio real
-  */
-  if (container.scrollLeft <= 5) {
-
-    this.isResetting = true;
-
-    container.style.scrollBehavior = 'auto';
-
-    container.scrollLeft =
-      container.scrollLeft + originalWidth;
-
-    requestAnimationFrame(() => {
-
-      container.style.scrollBehavior = 'smooth';
-
-      this.isResetting = false;
+    this.scrollRaf = requestAnimationFrame(() => {
+      this.syncActiveIndex();
+      this.scrollRaf = 0;
     });
   }
 
-  /*
-    Llegó al final real
-  */
-  else if (container.scrollLeft >= maxScroll - 5) {
+  scrollCards(direction: 'left' | 'right'): void {
+    const total = this.dots.length;
 
-    this.isResetting = true;
+    if (!total) return;
 
-    container.style.scrollBehavior = 'auto';
+    let nextIndex =
+      direction === 'right'
+        ? this.activeIndex + 1
+        : this.activeIndex - 1;
 
-    container.scrollLeft =
-      container.scrollLeft - originalWidth;
+    if (nextIndex >= total) {
+      nextIndex = 0;
+    }
 
-    requestAnimationFrame(() => {
+    if (nextIndex < 0) {
+      nextIndex = total - 1;
+    }
 
-      container.style.scrollBehavior = 'smooth';
+    this.goToCard(nextIndex);
+    this.restartAutoScroll();
+  }
 
-      this.isResetting = false;
+  goToCard(index: number, behavior: ScrollBehavior = 'smooth'): void {
+    if (!this.isBrowser) return;
+
+    const container = this.cardsContainer?.nativeElement;
+    const cards = this.getCards();
+
+    if (!container || !cards.length || !cards[index]) return;
+
+    const card = cards[index];
+
+    const left =
+      card.offsetLeft -
+      ((container.clientWidth - card.clientWidth) / 2);
+
+    this.activeIndex = index;
+
+    container.scrollTo({
+      left,
+      behavior: this.prefersReducedMotion ? 'auto' : behavior
     });
   }
-});
+
+  onCarouselKeydown(event: KeyboardEvent): void {
+    if (event.key === 'ArrowRight') {
+      event.preventDefault();
+      this.scrollCards('right');
+      return;
+    }
+
+    if (event.key === 'ArrowLeft') {
+      event.preventDefault();
+      this.scrollCards('left');
+      return;
+    }
+
+    if (event.key === 'Home') {
+      event.preventDefault();
+      this.goToCard(0);
+      this.restartAutoScroll();
+      return;
+    }
+
+    if (event.key === 'End') {
+      event.preventDefault();
+      this.goToCard(this.dots.length - 1);
+      this.restartAutoScroll();
+    }
+  }
+
+  pauseAutoScroll(): void {
+    if (this.autoScroll) {
+      clearInterval(this.autoScroll);
+      this.autoScroll = null;
+    }
+  }
+
+  resumeAutoScroll(): void {
+    if (!this.isBrowser || this.destroyed || document.hidden) return;
 
     this.startAutoScroll();
+  }
 
-    container.addEventListener('mouseenter', () => {
-      clearInterval(this.autoScroll);
+  private startAutoScroll(): void {
+    if (!this.isBrowser || this.prefersReducedMotion || this.destroyed) return;
+
+    this.pauseAutoScroll();
+
+    this.autoScroll = setInterval(() => {
+      this.scrollCards('right');
+    }, 5500);
+  }
+
+  private restartAutoScroll(): void {
+    if (this.prefersReducedMotion) return;
+
+    this.startAutoScroll();
+  }
+
+  private syncActiveIndex(): void {
+    const container = this.cardsContainer?.nativeElement;
+    const cards = this.getCards();
+
+    if (!container || !cards.length) return;
+
+    const containerCenter =
+      container.scrollLeft + container.clientWidth / 2;
+
+    let nearestIndex = 0;
+    let nearestDistance = Number.POSITIVE_INFINITY;
+
+    cards.forEach((card, index) => {
+      const cardCenter =
+        card.offsetLeft + card.offsetWidth / 2;
+
+      const distance =
+        Math.abs(cardCenter - containerCenter);
+
+      if (distance < nearestDistance) {
+        nearestDistance = distance;
+        nearestIndex = index;
+      }
     });
 
-    container.addEventListener('mouseleave', () => {
-      this.startAutoScroll();
+    this.activeIndex = nearestIndex;
+  }
+
+  private onResize(): void {
+    if (this.resizeRaf) return;
+
+    this.resizeRaf = requestAnimationFrame(() => {
+      this.goToCard(this.activeIndex, 'auto');
+      this.resizeRaf = 0;
     });
   }
 
-  startAutoScroll() {
+  private getCards(): HTMLElement[] {
+    const container = this.cardsContainer?.nativeElement;
 
-    clearInterval(this.autoScroll);
+    if (!container) return [];
 
-    this.autoScroll = setInterval(() => {
+    return Array.from(
+      container.querySelectorAll<HTMLElement>('.service-card')
+    );
+  }
 
-      const container = this.cardsContainer.nativeElement;
+  private addListener(
+    target: EventTarget,
+    eventName: string,
+    handler: EventListenerOrEventListenerObject,
+    options?: AddEventListenerOptions
+  ): void {
+    target.addEventListener(eventName, handler, options);
 
-      container.scrollBy({
-        left: this.cardWidth,
-        behavior: 'smooth'
-      });
-
-    }, 4500);
+    this.removeListeners.push(() => {
+      target.removeEventListener(eventName, handler, options);
+    });
   }
 }

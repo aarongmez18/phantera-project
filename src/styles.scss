@@ -58,9 +58,9 @@ body::after {
   content: "";
   position: absolute;
   left: -35%;
-  bottom: -350%;
+  bottom: -550%;
   width: 170%;
-  height: 600%;
+  height: 1000%;
   background: #C8A300;
   border-radius: 45% 55% 40% 60%;
   transform: rotate(-18deg) translateY(70%);
@@ -123,10 +123,19 @@ body::after {
   transform: none;
 }
 
+[reveal] {
+  backface-visibility: hidden;
+}
+
 @media (prefers-reduced-motion: reduce) {
-  .reveal {
-    opacity: 1;
-    transform: none;
-    transition: none;
+  .reveal,
+  .reveal-fade-up,
+  .reveal-fade-left,
+  .reveal-fade-right,
+  .reveal-fade-in,
+  .reveal-zoom-in {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
   }
 }

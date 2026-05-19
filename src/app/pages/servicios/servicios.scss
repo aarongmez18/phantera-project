@@ -1,16 +1,55 @@
+:host {
+  display: block;
+}
+
+.no-scrollbar {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
 .no-scrollbar::-webkit-scrollbar {
   display: none;
 }
 
-.no-scrollbar {
-  -ms-overflow-style: none;
-  scrollbar-width: none;
-}
-
-html {
-  scroll-behavior: smooth;
-}
-
-#cardsContainer {
+.services-carousel {
+  scroll-padding-inline: clamp(1.5rem, 4vw, 3rem);
+  overscroll-behavior-x: contain;
   -webkit-overflow-scrolling: touch;
+}
+
+.carousel-track {
+  width: max-content;
+}
+
+.service-card {
+  backface-visibility: hidden;
+  transform: translateZ(0);
+  will-change: transform, border-color, box-shadow;
+}
+
+.service-card.is-active,
+.service-card:focus-within {
+  border-color: rgba(200, 163, 0, 0.65);
+  box-shadow:
+    0 24px 80px rgba(0, 0, 0, 0.35),
+    0 0 0 1px rgba(200, 163, 0, 0.12);
+}
+
+.service-card-featured.is-active,
+.service-card-featured:focus-within {
+  box-shadow:
+    0 24px 80px rgba(200, 163, 0, 0.18),
+    0 0 0 1px rgba(200, 163, 0, 0.25);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .services-carousel {
+    scroll-behavior: auto !important;
+  }
+
+  .service-card,
+  button,
+  span {
+    transition: none !important;
+  }
 }
