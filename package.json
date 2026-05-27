@@ -1,14 +1,15 @@
 {
   "name": "phantera-project",
   "version": "0.0.0",
-  "scripts": {
-    "ng": "ng",
-    "start": "ng serve",
-    "build": "ng build",
-    "watch": "ng build --watch --configuration development",
-    "test": "ng test",
-    "serve:ssr:phantera-project": "node dist/phantera-project/server/server.mjs"
-  },
+"scripts": {
+  "ng": "ng",
+  "start": "ng serve",
+  "build": "ng build --configuration production",
+  "build:ionos": "ng build --configuration production",
+  "watch": "ng build --watch --configuration development",
+  "test": "ng test",
+  "serve:ssr:phantera-project": "node dist/phantera-project/server/server.mjs"
+},
   "prettier": {
     "overrides": [
       {
